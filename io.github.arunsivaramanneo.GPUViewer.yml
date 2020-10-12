@@ -1,7 +1,7 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: "18.08"
+runtime-version: "20.08"
 finish-args:
   - --device=all # OpenCL requires /dev/nvidia-uvm
   - --share=ipc
