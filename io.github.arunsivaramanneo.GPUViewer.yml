@@ -46,25 +46,28 @@ modules:
           - -DVULKAN_HEADERS_INSTALL_DIR=/app
           - -DCMAKE_BUILD_TYPE=Release
         sources:
-          - type: archive
-            url: "https://github.com/KhronosGroup/Vulkan-Tools/archive/sdk-1.1.82.0.tar.gz"
-            sha256: 22e5e5dfd47535e1664458ee59706abcaace96575d1a3d7fa9ae779a9e83b89c
+          - type: git
+            url: https://github.com/KhronosGroup/Vulkan-Tools.git
+            commit: 1abaced34b84831f60226ce67a702b2d841e1d87
+            tag: v1.2.156
         modules:
           - name: glslang
             buildsystem: cmake-ninja
             config-opts:
               - -DBUILD_SHARED_LIBS=ON
             sources:
-              - type: archive
-                url: "https://github.com/KhronosGroup/glslang/archive/7.9.2888.tar.gz"
-                sha256: cb66779d0e6b5f07f0445bd58289a24e56e12693e71d75c8fae3db31ffacaf8c
+              - type: git
+                url: https://github.com/KhronosGroup/glslang.git
+                commit: bcf6a2430e99e8fc24f9f266e99316905e6d5134
+                tag: '8.13.3743'
 
           - name: vulkan-headers
             buildsystem: cmake-ninja
             sources:
-              - type: archive
-                url: "https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-1.1.82.0.tar.gz"
-                sha256: df73da07d547cfbe88a797802401ea8225e4844e13d4fde52a7cb6e00e5179e5
+              - type: git
+                url: https://github.com/KhronosGroup/Vulkan-Headers.git
+                commit: 94ff600cc8623a2fd270cc14b14def3fca12ffaf
+                tag: v1.2.156
 
       - name: mesa-demos
         config-opts:
@@ -86,10 +89,13 @@ modules:
             config-opts:
               - -DCMAKE_INSTALL_LIBDIR=/app/lib
               - -DOpenGL_GL_PREFERENCE=LEGACY
+            build-options:
+              cflags: -fcommon
+              cxxflags: -fcommon
             sources:
               - type: archive
-                url: "https://datapacket.dl.sourceforge.net/project/freeglut/freeglut/3.0.0/freeglut-3.0.0.tar.gz"
-                sha256: 2a43be8515b01ea82bcfa17d29ae0d40bd128342f0930cd1f375f1ff999f76a2
+                url: https://downloads.sourceforge.net/project/freeglut/freeglut/3.2.1/freeglut-3.2.1.tar.gz
+                sha256: d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68
 
       - name: clinfo
         no-autogen: true
@@ -103,9 +109,10 @@ modules:
         modules:
           - name: ocl-icd
             sources:
-              - type: archive
-                url: "https://github.com/OCL-dev/ocl-icd/archive/v2.2.12.tar.gz"
-                sha256: 17500e5788304eef5b52dbe784cec197bdae64e05eecf38317840d2d05484272
+              - type: git
+                url: https://github.com/OCL-dev/ocl-icd.git
+                commit: 3b7ded60ebb7e1afddcbae6f82ac8645b276e358
+                tag: v2.2.13
               - type: script
                 dest-filename: autogen.sh
                 commands:
@@ -116,8 +123,9 @@ modules:
               - cp -av opencl22/CL /app/include
             sources:
               - type: git
-                url: "https://github.com/KhronosGroup/OpenCL-Headers.git"
-                commit: e986688daf750633898dfd3994e14a9e618f2aa5
+                url: https://github.com/KhronosGroup/OpenCL-Headers.git
+                commit: b04034a17e214322772c19e7ccd2adf0cd306920
+                tag: v2020.06.16
 
       - name: pygobject
         buildsystem: meson
