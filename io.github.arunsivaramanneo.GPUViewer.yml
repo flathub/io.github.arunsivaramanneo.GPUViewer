@@ -1,9 +1,9 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: "18.08"
+runtime-version: "20.08"
 finish-args:
-  - --device=all # OpenCL requires /dev/nvidia-uvm
+  - --device=dri
   - --share=ipc
   - --socket=x11
   - --socket=wayland
@@ -12,25 +12,30 @@ cleanup:
   - "*.a"
   - "*.la"
   - /include
+  - /lib/cmake
   - /lib/pkgconfig
 modules:
   - name: gpu-viewer
     buildsystem: simple
     build-commands:
-      - mkdir -p /app/{bin,share}
-      - cp -a . /app/share/gpu-viewer
+      - install -dm755 /app/share/gpu-viewer
+      - rm -r Files/__pycache__
+      - cp -r --preserve=mode -t /app/share/gpu-viewer/
+          Files Images
+      - install -Dm644 -t /app/share/gpu-viewer/
+          "About GPU Viewer" "Change Log.md" LICENSE README.md
       - install -Dm755 gpu-viewer.sh /app/bin/gpu-viewer
       - install -Dm644 Images/GPU_Viewer.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
       - install -Dm644 gpu-viewer.desktop /app/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --remove-key=Terminal  --remove-key=version /app/share/applications/${FLATPAK_ID}.desktop
+      - desktop-file-edit --remove-key=Terminal --remove-key=version /app/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key=Terminal --set-value=false /app/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key=Exec --set-value=gpu-viewer /app/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: "https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.15.tar.gz"
-        sha256: 366abf2322b6c4dd9852b3352cfbe397b4481bf2fc8f210813cede98bc19fcf5
+        url: "https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.32.tar.gz"
+        sha256: 6e88a0161d51162fc7b8a635a3bccfa8c593ce5a565c0e7acf2e19e1452bc7b4
       - type: script
         dest-filename: gpu-viewer.sh
         commands:
@@ -47,8 +52,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: "https://github.com/KhronosGroup/Vulkan-Tools/archive/sdk-1.1.82.0.tar.gz"
-            sha256: 22e5e5dfd47535e1664458ee59706abcaace96575d1a3d7fa9ae779a9e83b89c
+            url: "https://github.com/KhronosGroup/Vulkan-Tools/archive/sdk-1.2.170.0.tar.gz"
+            sha256: 0408ab3d2020e2e3a622be0dcac8d223cafe9a1123b4dff67a0ecc4e758718b4
         modules:
           - name: glslang
             buildsystem: cmake-ninja
@@ -56,40 +61,44 @@ modules:
               - -DBUILD_SHARED_LIBS=ON
             sources:
               - type: archive
-                url: "https://github.com/KhronosGroup/glslang/archive/7.9.2888.tar.gz"
-                sha256: cb66779d0e6b5f07f0445bd58289a24e56e12693e71d75c8fae3db31ffacaf8c
+                url: "https://github.com/KhronosGroup/glslang/archive/11.2.0.tar.gz"
+                sha256: 8ff2fcf9b054e4a4ef56fcd8a637322f827b2b176a592a618d63672ddb896e06
 
           - name: vulkan-headers
             buildsystem: cmake-ninja
             sources:
               - type: archive
-                url: "https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-1.1.82.0.tar.gz"
-                sha256: df73da07d547cfbe88a797802401ea8225e4844e13d4fde52a7cb6e00e5179e5
+                url: "https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-1.2.170.0.tar.gz"
+                sha256: d8e6050230ca678bcb0e7dc68d5984290da6eb655e8da9d08b5eaab1e84a7da9
 
       - name: mesa-demos
         config-opts:
           - --bindir=/app/lib/mesa-demos
+          - --disable-osmesa
         post-install:
           - mv -v /app/lib/mesa-demos/*info /app/bin/
         sources:
           - type: archive
-            url: "https://mesa.freedesktop.org/archive/demos/8.3.0/mesa-demos-8.3.0.tar.bz2"
-            sha256: c173154bbd0d5fb53d732471984def42fb1b14ac85fcb834138fb9518b3e0bef
+            url: "https://mesa.freedesktop.org/archive/demos/mesa-demos-8.4.0.tar.bz2"
+            sha256: 01e99c94a0184e63e796728af89bfac559795fb2a0d6f506fa900455ca5fff7d
         cleanup:
           - /lib/mesa-demos
         modules:
           - shared-modules/glew/glew.json
-          - shared-modules/glu/glu-9.0.0.json
+          - shared-modules/glu/glu-9.json
 
           - name: freeglut
             buildsystem: cmake-ninja
+            build-options:
+              cflags: -fcommon
             config-opts:
-              - -DCMAKE_INSTALL_LIBDIR=/app/lib
+              - -DCMAKE_BUILD_TYPE=None
+              - -DFREEGLUT_BUILD_STATIC_LIBS=OFF
               - -DOpenGL_GL_PREFERENCE=LEGACY
             sources:
               - type: archive
-                url: "https://datapacket.dl.sourceforge.net/project/freeglut/freeglut/3.0.0/freeglut-3.0.0.tar.gz"
-                sha256: 2a43be8515b01ea82bcfa17d29ae0d40bd128342f0930cd1f375f1ff999f76a2
+                url: "https://downloads.sourceforge.net/freeglut/freeglut-3.2.1.tar.gz"
+                sha256: d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68
 
       - name: clinfo
         no-autogen: true
@@ -98,37 +107,43 @@ modules:
           - install -Dm755 -t /app/bin/ clinfo
         sources:
           - type: archive
-            url: "https://github.com/Oblomov/clinfo/archive/2.2.18.04.06.tar.gz"
-            sha256: f77021a57b3afcdebc73107e2254b95780026a9df9aa4f8db6aff11c03f0ec6c
+            url: "https://github.com/Oblomov/clinfo/archive/3.0.21.02.21.tar.gz"
+            sha256: e52f5c374a10364999d57a1be30219b47fb0b4f090e418f2ca19a0c037c1e694
         modules:
-          - name: ocl-icd
+          - name: opencl-headers
+            buildsystem: cmake
+            config-opts:
+              - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: "https://github.com/OCL-dev/ocl-icd/archive/v2.2.12.tar.gz"
-                sha256: 17500e5788304eef5b52dbe784cec197bdae64e05eecf38317840d2d05484272
-              - type: script
-                dest-filename: autogen.sh
-                commands:
-                  - autoreconf -fiv
-          - name: opencl-headers
-            buildsystem: simple
-            build-commands:
-              - cp -av opencl22/CL /app/include
-            sources:
-              - type: git
-                url: "https://github.com/KhronosGroup/OpenCL-Headers.git"
-                commit: e986688daf750633898dfd3994e14a9e618f2aa5
+                url: "https://github.com/KhronosGroup/OpenCL-Headers/archive/v2020.12.18.tar.gz"
+                sha256: 5dad6d436c0d7646ef62a39ef6cd1f3eba0a98fc9157808dfc1d808f3705ebc2
 
       - name: pygobject
         buildsystem: meson
         sources:
           - type: archive
-            url: "https://ftp.gnome.org/pub/gnome/sources/pygobject/3.30/pygobject-3.30.1.tar.xz"
-            sha256: e1335b70e36885bf1ae207ec1283a369b8fc3e080688046c1edb5a676edc11ce
+            url: "https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.40.1/pygobject-3.40.1.tar.gz"
+            sha256: 3cd4a350ee997978de3c7d73d008788eeb4149816395016f269bbfa51a01b69b
         modules:
           - name: pycairo
             buildsystem: meson
             sources:
               - type: archive
-                url: "https://github.com/pygobject/pycairo/releases/download/v1.17.1/pycairo-1.17.1.tar.gz"
-                sha256: 0f0a35ec923d87bc495f6753b1e540fd046d95db56a35250c44089fbce03b698
+                url: "https://github.com/pygobject/pycairo/archive/refs/tags/v1.20.0.tar.gz"
+                sha256: b5ee5318ad10e6f0b5aeedd4ff4b66b341b8fb1a348076812d0f7751f7691ddf
+
+      - name: vdpauinfo
+        sources:
+          - type: archive
+            url: "https://gitlab.freedesktop.org/vdpau/vdpauinfo/-/archive/1.4/vdpauinfo-1.4.tar.gz"
+            sha256: 52377604a4f27afdee67c85b62b66457a981747009c839953d3fba5c4c89cb66
+
+      - name: lsb-release-compat
+        buildsystem: simple
+        build-commands:
+          - make install PREFIX=/app
+        sources:
+          - type: git
+            url: "https://gitlab.com/nanonyme/lsb-release-compat.git"
+            commit: f4f908b62dcc9cd081eb2a42b6ad7cf98db4bb10
