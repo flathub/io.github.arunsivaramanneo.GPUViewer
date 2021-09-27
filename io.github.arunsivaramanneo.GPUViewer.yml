@@ -63,25 +63,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/sdk-1.2.189.1/Vulkan-Tools-sdk-1.2.189.1.tar.gz
-            sha256: ef5db0934ff7192657bbfc675f6e3e1ee009f2ad34aab915d2bd9993a59add81
-            x-checker-data:
-              type: anitya
-              project-id: 15953
-              stable-only: true
-              url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/sdk-$version/Vulkan-Tools-sdk-$version.tar.gz
-        modules:
-          - name: vulkan-headers
-            buildsystem: cmake-ninja
-            sources:
-              - type: archive
-                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.2.193/Vulkan-Headers-v1.2.193.tar.gz
-                sha256: 52e039b91a27fa2a9e9fa8e39803df1b57cf803c27b67f67d74ba5eacdaf864e
-                x-checker-data:
-                  type: anitya
-                  project-id: 88835
-                  stable-only: true
-                  url-template: https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/sdk-1.2.182.0/Vulkan-Tools-sdk-1.2.182.0.tar.gz
+            sha256: 584817d57169604f9d568835f907923e7a84dcc014aa19fe44c54fb22b8fb6a4
 
       - name: mesa-demos
         config-opts:
