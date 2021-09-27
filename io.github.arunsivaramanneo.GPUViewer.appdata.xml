@@ -28,9 +28,9 @@
             <image>https://user-images.githubusercontent.com/30646692/42731016-18ca0628-8822-11e8-90c1-def21ee5d0bb.png</image>
         </screenshot>
     </screenshots>
-    <content_rating type="oars-1.1" />
+    <content_rating type="oars-1.1"/>
     <releases>
-        <release version="1.35" date="2021-09-26" />
-        <release version="1.15" date="2018-12-22" />
+        <release version="1.35" date="2021-09-27"/>
+        <release version="1.15" date="2018-12-22"/>
     </releases>
 </component>
