@@ -1,7 +1,7 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: '20.08'
+runtime-version: '21.08'
 finish-args:
   - --device=dri
   - --share=ipc
@@ -71,20 +71,6 @@ modules:
               stable-only: true
               url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/sdk-$version/Vulkan-Tools-sdk-$version.tar.gz
         modules:
-          - name: glslang
-            buildsystem: cmake-ninja
-            config-opts:
-              - -DBUILD_SHARED_LIBS=ON
-            sources:
-              - type: archive
-                url: https://github.com/KhronosGroup/glslang/archive/11.6.0/glslang-11.6.0.tar.gz
-                sha256: 99ecd3a0c2c2219293d76723846f762a9f3e7dd0dc2a4f346d0fc3a05a0ce000
-                x-checker-data:
-                  type: anitya
-                  project-id: 205796
-                  stable-only: true
-                  url-template: https://github.com/KhronosGroup/glslang/archive/$version/glslang-$version.tar.gz
-
           - name: vulkan-headers
             buildsystem: cmake-ninja
             sources:
