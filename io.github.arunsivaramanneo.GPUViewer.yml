@@ -18,8 +18,10 @@ modules:
   - name: gpu-viewer
     buildsystem: simple
     build-commands:
-      - install -dm755 /app/share/gpu-viewer
+      # Remove accidentally committed files: https://github.com/arunsivaramanneo/GPU-Viewer/pull/37
       - rm -r Files/__pycache__
+      # Install project
+      - install -dm755 /app/share/gpu-viewer
       - cp -r --preserve=mode -t /app/share/gpu-viewer/
           Files Images
       - install -Dm644 -t /app/share/gpu-viewer/
@@ -27,6 +29,9 @@ modules:
       - install -Dm755 gpu-viewer.sh /app/bin/gpu-viewer
       - install -Dm644 Images/GPU_Viewer.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
       - install -Dm644 gpu-viewer.desktop /app/share/applications/${FLATPAK_ID}.desktop
+      # Fix desktop file
+      # https://github.com/arunsivaramanneo/GPU-Viewer/pull/36
+      # https://github.com/arunsivaramanneo/GPU-Viewer/pull/38
       - desktop-file-edit --remove-key=Terminal --remove-key=version /app/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key=Terminal --set-value=false /app/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key=Exec --set-value=gpu-viewer /app/share/applications/${FLATPAK_ID}.desktop
@@ -34,8 +39,8 @@ modules:
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: "https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.32.tar.gz"
-        sha256: 6e88a0161d51162fc7b8a635a3bccfa8c593ce5a565c0e7acf2e19e1452bc7b4
+        url: "https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.35.tar.gz"
+        sha256: dadcd5834855adbc728ed1ef28e009f05b6d9224b0902576356bd503a63b00d4
       - type: script
         dest-filename: gpu-viewer.sh
         commands:
@@ -43,6 +48,7 @@ modules:
           - exec python3 ./GPUViewer.py $@
       - type: file
         path: io.github.arunsivaramanneo.GPUViewer.appdata.xml
+
     modules:
       - name: vulkan-tools
         buildsystem: cmake-ninja
