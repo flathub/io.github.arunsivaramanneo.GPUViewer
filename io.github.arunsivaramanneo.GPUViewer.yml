@@ -1,7 +1,7 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: "20.08"
+runtime-version: '21.08'
 finish-args:
   - --device=dri
   - --share=ipc
@@ -9,8 +9,8 @@ finish-args:
   - --socket=wayland
 command: gpu-viewer
 cleanup:
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
   - /include
   - /lib/cmake
   - /lib/pkgconfig
@@ -22,10 +22,9 @@ modules:
       - rm -r Files/__pycache__
       # Install project
       - install -dm755 /app/share/gpu-viewer
-      - cp -r --preserve=mode -t /app/share/gpu-viewer/
-          Files Images
-      - install -Dm644 -t /app/share/gpu-viewer/
-          "About GPU Viewer" "Change Log.md" LICENSE README.md
+      - cp -r --preserve=mode -t /app/share/gpu-viewer/ Files Images
+      - install -Dm644 -t /app/share/gpu-viewer/ "About GPU Viewer" "Change Log.md"
+        LICENSE README.md
       - install -Dm755 gpu-viewer.sh /app/bin/gpu-viewer
       - install -Dm644 Images/GPU_Viewer.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
       - install -Dm644 gpu-viewer.desktop /app/share/applications/${FLATPAK_ID}.desktop
@@ -39,8 +38,14 @@ modules:
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: "https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.35.tar.gz"
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.35/GPU-Viewer-1.35.tar.gz
         sha256: dadcd5834855adbc728ed1ef28e009f05b6d9224b0902576356bd503a63b00d4
+        x-checker-data:
+          is-main-source: true
+          type: anitya
+          project-id: 235097
+          stable-only: true
+          url-template: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v$version/GPU-Viewer-$version.tar.gz
       - type: script
         dest-filename: gpu-viewer.sh
         commands:
@@ -58,24 +63,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: "https://github.com/KhronosGroup/Vulkan-Tools/archive/sdk-1.2.170.0.tar.gz"
-            sha256: 0408ab3d2020e2e3a622be0dcac8d223cafe9a1123b4dff67a0ecc4e758718b4
-        modules:
-          - name: glslang
-            buildsystem: cmake-ninja
-            config-opts:
-              - -DBUILD_SHARED_LIBS=ON
-            sources:
-              - type: archive
-                url: "https://github.com/KhronosGroup/glslang/archive/11.2.0.tar.gz"
-                sha256: 8ff2fcf9b054e4a4ef56fcd8a637322f827b2b176a592a618d63672ddb896e06
-
-          - name: vulkan-headers
-            buildsystem: cmake-ninja
-            sources:
-              - type: archive
-                url: "https://github.com/KhronosGroup/Vulkan-Headers/archive/sdk-1.2.170.0.tar.gz"
-                sha256: d8e6050230ca678bcb0e7dc68d5984290da6eb655e8da9d08b5eaab1e84a7da9
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/sdk-1.2.182.0/Vulkan-Tools-sdk-1.2.182.0.tar.gz
+            sha256: 584817d57169604f9d568835f907923e7a84dcc014aa19fe44c54fb22b8fb6a4
 
       - name: mesa-demos
         config-opts:
@@ -85,8 +74,13 @@ modules:
           - mv -v /app/lib/mesa-demos/*info /app/bin/
         sources:
           - type: archive
-            url: "https://mesa.freedesktop.org/archive/demos/mesa-demos-8.4.0.tar.bz2"
+            url: https://mesa.freedesktop.org/archive/demos/mesa-demos-8.4.0.tar.bz2
             sha256: 01e99c94a0184e63e796728af89bfac559795fb2a0d6f506fa900455ca5fff7d
+            x-checker-data:
+              type: anitya
+              project-id: 16781
+              stable-only: true
+              url-template: https://mesa.freedesktop.org/archive/demos/mesa-demos-$version.tar.bz2
         cleanup:
           - /lib/mesa-demos
         modules:
@@ -103,8 +97,13 @@ modules:
               - -DOpenGL_GL_PREFERENCE=LEGACY
             sources:
               - type: archive
-                url: "https://downloads.sourceforge.net/freeglut/freeglut-3.2.1.tar.gz"
+                url: https://downloads.sourceforge.net/freeglut/freeglut-3.2.1.tar.gz
                 sha256: d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68
+                x-checker-data:
+                  type: anitya
+                  project-id: 846
+                  stable-only: true
+                  url-template: https://downloads.sourceforge.net/freeglut/freeglut-$version.tar.gz
 
       - name: clinfo
         no-autogen: true
@@ -113,8 +112,13 @@ modules:
           - install -Dm755 -t /app/bin/ clinfo
         sources:
           - type: archive
-            url: "https://github.com/Oblomov/clinfo/archive/3.0.21.02.21.tar.gz"
+            url: https://github.com/Oblomov/clinfo/archive/3.0.21.02.21/clinfo-3.0.21.02.21.tar.gz
             sha256: e52f5c374a10364999d57a1be30219b47fb0b4f090e418f2ca19a0c037c1e694
+            x-checker-data:
+              type: anitya
+              project-id: 10503
+              stable-only: true
+              url-template: https://github.com/Oblomov/clinfo/archive/$version/clinfo-$version.tar.gz
         modules:
           - name: opencl-headers
             buildsystem: cmake
@@ -122,28 +126,48 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: "https://github.com/KhronosGroup/OpenCL-Headers/archive/v2020.12.18.tar.gz"
-                sha256: 5dad6d436c0d7646ef62a39ef6cd1f3eba0a98fc9157808dfc1d808f3705ebc2
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2021.06.30/OpenCL-Headers-v2021.06.30.tar.gz
+                sha256: 6640d590c30d90f89351f5e3043ae6363feeb19ac5e64bc35f8cfa1a6cd5498e
+                x-checker-data:
+                  type: anitya
+                  project-id: 223257
+                  stable-only: true
+                  url-template: https://github.com/KhronosGroup/OpenCL-Headers/archive/v$version/OpenCL-Headers-v$version.tar.gz
 
       - name: pygobject
         buildsystem: meson
         sources:
           - type: archive
-            url: "https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.40.1/pygobject-3.40.1.tar.gz"
-            sha256: 3cd4a350ee997978de3c7d73d008788eeb4149816395016f269bbfa51a01b69b
+            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.42.0/pygobject-3.42.0.tar.gz
+            sha256: b4d40fcd6b61a918eb33a44c5cc59bfb1b32169c593948cc0d013712b4ff579e
+            x-checker-data:
+              type: anitya
+              project-id: 13158
+              stable-only: true
+              url-template: https://gitlab.gnome.org/GNOME/pygobject/-/archive/$version/pygobject-$version.tar.gz
         modules:
           - name: pycairo
             buildsystem: meson
             sources:
               - type: archive
-                url: "https://github.com/pygobject/pycairo/archive/refs/tags/v1.20.0.tar.gz"
-                sha256: b5ee5318ad10e6f0b5aeedd4ff4b66b341b8fb1a348076812d0f7751f7691ddf
+                url: https://github.com/pygobject/pycairo/archive/v1.20.1/pycairo-v1.20.1.tar.gz
+                sha256: 34f0a86ee5d98f3fca1f09dd3960d43ea9937b2df44f5270d2eb94f529677150
+                x-checker-data:
+                  type: anitya
+                  project-id: 13166
+                  stable-only: true
+                  url-template: https://github.com/pygobject/pycairo/archive/v$version/pycairo-v$version.tar.gz
 
       - name: vdpauinfo
         sources:
           - type: archive
-            url: "https://gitlab.freedesktop.org/vdpau/vdpauinfo/-/archive/1.4/vdpauinfo-1.4.tar.gz"
+            url: https://gitlab.freedesktop.org/vdpau/vdpauinfo/-/archive/1.4/vdpauinfo-1.4.tar.gz
             sha256: 52377604a4f27afdee67c85b62b66457a981747009c839953d3fba5c4c89cb66
+            x-checker-data:
+              type: anitya
+              project-id: 16031
+              stable-only: true
+              url-template: https://gitlab.freedesktop.org/vdpau/vdpauinfo/-/archive/$version/vdpauinfo-$version.tar.gz
 
       - name: lsb-release-compat
         buildsystem: simple
@@ -151,5 +175,6 @@ modules:
           - make install PREFIX=/app
         sources:
           - type: git
-            url: "https://gitlab.com/nanonyme/lsb-release-compat.git"
+            url: https://gitlab.com/nanonyme/lsb-release-compat.git
+            branch: master
             commit: f4f908b62dcc9cd081eb2a42b6ad7cf98db4bb10
