@@ -38,8 +38,8 @@ modules:
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.35/GPU-Viewer-1.35.tar.gz
-        sha256: dadcd5834855adbc728ed1ef28e009f05b6d9224b0902576356bd503a63b00d4
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.36/GPU-Viewer-1.36.tar.gz
+        sha256: 8bfeb51f7efe953d12c4985955fc21906b2a187f99f84a5410b9ed3fd50a626e
         x-checker-data:
           is-main-source: true
           type: anitya
