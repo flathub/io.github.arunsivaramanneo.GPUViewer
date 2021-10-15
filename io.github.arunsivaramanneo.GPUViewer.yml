@@ -27,14 +27,7 @@ modules:
         LICENSE README.md
       - install -Dm755 gpu-viewer.sh /app/bin/gpu-viewer
       - install -Dm644 Images/GPU_Viewer.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
-      - install -Dm644 gpu-viewer.desktop /app/share/applications/${FLATPAK_ID}.desktop
-      # Fix desktop file
-      # https://github.com/arunsivaramanneo/GPU-Viewer/pull/36
-      # https://github.com/arunsivaramanneo/GPU-Viewer/pull/38
-      - desktop-file-edit --remove-key=Terminal --remove-key=version /app/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-key=Terminal --set-value=false /app/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-key=Exec --set-value=gpu-viewer /app/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
@@ -53,6 +46,8 @@ modules:
           - exec python3 ./GPUViewer.py $@
       - type: file
         path: io.github.arunsivaramanneo.GPUViewer.appdata.xml
+      - type: file
+        path: io.github.arunsivaramanneo.GPUViewer.desktop
 
     modules:
       - name: vulkan-tools
