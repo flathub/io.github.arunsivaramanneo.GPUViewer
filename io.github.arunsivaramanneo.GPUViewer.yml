@@ -27,19 +27,12 @@ modules:
         LICENSE README.md
       - install -Dm755 gpu-viewer.sh /app/bin/gpu-viewer
       - install -Dm644 Images/GPU_Viewer.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
-      - install -Dm644 gpu-viewer.desktop /app/share/applications/${FLATPAK_ID}.desktop
-      # Fix desktop file
-      # https://github.com/arunsivaramanneo/GPU-Viewer/pull/36
-      # https://github.com/arunsivaramanneo/GPU-Viewer/pull/38
-      - desktop-file-edit --remove-key=Terminal --remove-key=version /app/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-key=Terminal --set-value=false /app/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-key=Exec --set-value=gpu-viewer /app/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.35/GPU-Viewer-1.35.tar.gz
-        sha256: dadcd5834855adbc728ed1ef28e009f05b6d9224b0902576356bd503a63b00d4
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.36/GPU-Viewer-1.36.tar.gz
+        sha256: 8bfeb51f7efe953d12c4985955fc21906b2a187f99f84a5410b9ed3fd50a626e
         x-checker-data:
           is-main-source: true
           type: anitya
@@ -53,6 +46,8 @@ modules:
           - exec python3 ./GPUViewer.py $@
       - type: file
         path: io.github.arunsivaramanneo.GPUViewer.appdata.xml
+      - type: file
+        path: io.github.arunsivaramanneo.GPUViewer.desktop
 
     modules:
       - name: vulkan-tools
