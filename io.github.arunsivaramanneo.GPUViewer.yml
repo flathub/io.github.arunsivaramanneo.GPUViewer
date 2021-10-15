@@ -18,26 +18,26 @@ modules:
   - name: gpu-viewer
     buildsystem: simple
     build-commands:
-      # Remove accidentally committed files: https://github.com/arunsivaramanneo/GPU-Viewer/pull/37
-      - rm -r Files/__pycache__
-      # Install project
       - install -dm755 /app/share/gpu-viewer
       - cp -r --preserve=mode -t /app/share/gpu-viewer/ Files Images
       - install -Dm644 -t /app/share/gpu-viewer/ "About GPU Viewer" "Change Log.md"
         LICENSE README.md
       - install -Dm755 gpu-viewer.sh /app/bin/gpu-viewer
       - install -Dm644 Images/GPU_Viewer.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
-      - install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm644 gpu-viewer.desktop /app/share/applications/${FLATPAK_ID}.desktop
+      - desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.36/GPU-Viewer-1.36.tar.gz
-        sha256: 8bfeb51f7efe953d12c4985955fc21906b2a187f99f84a5410b9ed3fd50a626e
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/c898afce82f28f13885b24e895ce183112c0bf44.tar.gz
+        sha256: 11420bc387e8a01541a62860f96906f04798c952bc8240177475cf0c897c86df
         x-checker-data:
           is-main-source: true
           type: anitya
           project-id: 235097
           stable-only: true
+          versions:
+            '>': '1.36'
           url-template: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v$version/GPU-Viewer-$version.tar.gz
       - type: script
         dest-filename: gpu-viewer.sh
@@ -46,8 +46,6 @@ modules:
           - exec python3 ./GPUViewer.py $@
       - type: file
         path: io.github.arunsivaramanneo.GPUViewer.appdata.xml
-      - type: file
-        path: io.github.arunsivaramanneo.GPUViewer.desktop
 
     modules:
       - name: vulkan-tools
