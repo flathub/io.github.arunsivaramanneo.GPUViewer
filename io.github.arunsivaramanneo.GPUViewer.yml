@@ -25,6 +25,9 @@ modules:
       - install -Dm755 gpu-viewer.sh /app/bin/gpu-viewer
       - install -Dm644 Images/GPU_Viewer.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
       - install -Dm644 gpu-viewer.desktop /app/share/applications/${FLATPAK_ID}.desktop
+      # desktop-file-utils validator doesn't support v1.5, see CURRENT_SPEC_VERSION @src/validate.h
+      #  and https://gitlab.freedesktop.org/xdg/desktop-file-utils/-/issues/59
+      - desktop-file-edit --set-key=Version --set-value=1.4 /app/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
