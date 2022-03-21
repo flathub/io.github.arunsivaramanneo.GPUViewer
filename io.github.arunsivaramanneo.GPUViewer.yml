@@ -32,8 +32,8 @@ modules:
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.37/GPU-Viewer-1.37.tar.gz
-        sha256: 8cb0d85b342f645e6df2c6c442ac6c5f0925bd73dde38da470b96b2890be046e
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.38/GPU-Viewer-1.38.tar.gz
+        sha256: f4046c270754489a5b27b3f7b7b49b216e34a4a4bff29a4e2993930a4c282954
         x-checker-data:
           is-main-source: true
           type: anitya
@@ -93,8 +93,8 @@ modules:
               - -DOpenGL_GL_PREFERENCE=LEGACY
             sources:
               - type: archive
-                url: https://downloads.sourceforge.net/freeglut/freeglut-3.2.1.tar.gz
-                sha256: d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68
+                url: https://downloads.sourceforge.net/freeglut/freeglut-3.2.2.tar.gz
+                sha256: c5944a082df0bba96b5756dddb1f75d0cd72ce27b5395c6c1dde85c2ff297a50
                 x-checker-data:
                   type: anitya
                   project-id: 846
@@ -122,8 +122,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2021.06.30/OpenCL-Headers-v2021.06.30.tar.gz
-                sha256: 6640d590c30d90f89351f5e3043ae6363feeb19ac5e64bc35f8cfa1a6cd5498e
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2022.01.04/OpenCL-Headers-v2022.01.04.tar.gz
+                sha256: 6e716e2b13fc8d363b40a165ca75021b102f9328e2b38f8054d7db5884de29c9
                 x-checker-data:
                   type: anitya
                   project-id: 223257
@@ -146,8 +146,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://github.com/pygobject/pycairo/archive/v1.20.1/pycairo-v1.20.1.tar.gz
-                sha256: 34f0a86ee5d98f3fca1f09dd3960d43ea9937b2df44f5270d2eb94f529677150
+                url: https://github.com/pygobject/pycairo/archive/v1.21.0/pycairo-v1.21.0.tar.gz
+                sha256: 5e88e718b58751c96aa496914dd1b6a0531488f501cedfb6cd40bb307d69b88c
                 x-checker-data:
                   type: anitya
                   project-id: 13166
