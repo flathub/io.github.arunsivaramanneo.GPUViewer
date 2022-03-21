@@ -9,46 +9,27 @@ finish-args:
   - --socket=wayland
 command: gpu-viewer
 cleanup:
-  - '*.a'
-  - '*.la'
   - /include
   - /lib/cmake
   - /lib/pkgconfig
+  - '*.a'
+  - '*.la'
 modules:
   - name: gpu-viewer
-    buildsystem: simple
-    build-commands:
-      - install -dm755 /app/share/gpu-viewer
-      - cp -r --preserve=mode -t /app/share/gpu-viewer/ Files Images
-      - install -Dm644 -t /app/share/gpu-viewer/ "About GPU Viewer" "Change Log.md"
-        LICENSE README.md
-      - install -Dm755 gpu-viewer.sh /app/bin/gpu-viewer
-      - install -Dm644 Images/GPU_Viewer.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
-      - install -Dm644 gpu-viewer.desktop /app/share/applications/${FLATPAK_ID}.desktop
-      # desktop-file-utils validator doesn't support v1.5, see CURRENT_SPEC_VERSION @src/validate.h
-      #  and https://gitlab.freedesktop.org/xdg/desktop-file-utils/-/issues/59
+    buildsystem: meson
+    post-install:
+      # latest desktop-file-utils release (0.26) doesn't support desktop file spec v1.5
       - desktop-file-edit --set-key=Version --set-value=1.4 /app/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop
-      - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.38/GPU-Viewer-1.38.tar.gz
-        sha256: f4046c270754489a5b27b3f7b7b49b216e34a4a4bff29a4e2993930a4c282954
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.40/GPU-Viewer-1.40.tar.gz
+        sha256: 2249b69b7d056d4fee7a87dc402b3f75ec57608a667ea3cdeed19b48b9c30103
         x-checker-data:
           is-main-source: true
           type: anitya
           project-id: 235097
           stable-only: true
-          versions:
-            '>': '1.36'
           url-template: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v$version/GPU-Viewer-$version.tar.gz
-      - type: script
-        dest-filename: gpu-viewer.sh
-        commands:
-          - cd /app/share/gpu-viewer/Files
-          - exec python3 ./GPUViewer.py $@
-      - type: file
-        path: io.github.arunsivaramanneo.GPUViewer.appdata.xml
 
     modules:
       - name: vulkan-tools
