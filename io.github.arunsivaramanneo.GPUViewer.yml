@@ -30,6 +30,8 @@ modules:
           project-id: 235097
           stable-only: true
           url-template: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v$version/GPU-Viewer-$version.tar.gz
+      - type: patch
+        path: gpuviewer-AppStream-MetaInfo-Add-missing-1.40-release.patch
 
     modules:
       - name: vulkan-tools

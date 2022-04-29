@@ -1,0 +1,24 @@
+From b5eb5e12f7e8ba771a48c04d213676a88a1d8809 Mon Sep 17 00:00:00 2001
+From: tinywrkb <tinywrkb@gmail.com>
+Date: Fri, 29 Apr 2022 17:01:23 +0300
+Subject: [PATCH] AppStream MetaInfo: Add missing 1.40 release
+
+---
+ data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml b/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
+index d5e4a44..5e52f80 100644
+--- a/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
++++ b/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
+@@ -30,6 +30,7 @@
+     </screenshots>
+     <content_rating type="oars-1.1"/>
+     <releases>
++        <release version="1.40" date="2022-04-28"/>
+         <release version="1.38" date="2022-03-21"/>
+         <release version="1.37" date="2021-12-06"/>
+         <release version="1.36" date="2021-10-15"/>
+-- 
+2.36.0
+
