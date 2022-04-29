@@ -20,6 +20,7 @@ modules:
     post-install:
       # latest desktop-file-utils release (0.26) doesn't support desktop file spec v1.5
       - desktop-file-edit --set-key=Version --set-value=1.4 /app/share/applications/${FLATPAK_ID}.desktop
+      - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
         url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.40/GPU-Viewer-1.40.tar.gz
