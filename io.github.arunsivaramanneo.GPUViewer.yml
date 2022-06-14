@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.216/Vulkan-Tools-1.3.216.tar.gz
-            sha256: 753c03878bb9e9926913d6d22096fbd44bff221af0b2173b81c1189748a8f71b
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.217/Vulkan-Tools-1.3.217.tar.gz
+            sha256: 09e1ae38c4546ca709dae788562f25f2bdd9ed7f401bd9e03abc29233a552a0f
             x-checker-data:
               type: anitya
               project-id: 242111
@@ -55,8 +55,8 @@ modules:
             buildsystem: cmake-ninja
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.216/Vulkan-Headers-v1.3.216.tar.gz
-                sha256: 93f9a70ed9e956f3e0a1b41b71b6d030428cc3509e7e2b38d0ea6ba89b09f71e
+                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.217/Vulkan-Headers-v1.3.217.tar.gz
+                sha256: 004b4f7841bd912d1cc3f5ac5694d5dea2f944f10053451233b533874368df87
                 x-checker-data:
                   type: anitya
                   project-id: 88835
