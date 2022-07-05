@@ -23,16 +23,17 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.40/GPU-Viewer-1.40.tar.gz
-        sha256: 2249b69b7d056d4fee7a87dc402b3f75ec57608a667ea3cdeed19b48b9c30103
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.42/GPU-Viewer-1.42.tar.gz
+        sha256: d4146b97791e97d19b17c37ca344db57f30aa897db04a4b4252f54af0e831427
         x-checker-data:
           is-main-source: true
-          type: anitya
-          project-id: 235097
-          stable-only: true
-          url-template: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v$version/GPU-Viewer-$version.tar.gz
+          type: json
+          url: https://api.github.com/repos/arunsivaramanneo/GPU-Viewer/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: '"https://github.com/arunsivaramanneo/GPU-Viewer/archive/v" +
+            $version + "/GPU-Viewer-" + $version + ".tar.gz"'
       - type: patch
-        path: gpuviewer-AppStream-MetaInfo-Add-missing-1.40-release.patch
+        path: gpuviewer-metainfo-add-missing-releases.patch
 
     modules:
       - name: vulkan-tools
@@ -43,8 +44,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.218/Vulkan-Tools-1.3.218.tar.gz
-            sha256: 95af429a5d50895f1385a3b61ca826ff77812b62c93ff8e3a9474a17a9f416bb
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.219/Vulkan-Tools-1.3.219.tar.gz
+            sha256: 33d67be600615dd91b5f07aa5a5e1a2cf73ee9a54f50844cebd44566ea6e4e22
             x-checker-data:
               type: anitya
               project-id: 242111
@@ -55,8 +56,8 @@ modules:
             buildsystem: cmake-ninja
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.218/Vulkan-Headers-v1.3.218.tar.gz
-                sha256: 9fd435580db06105036dee3c98a1c6460dea5e9ec618b8ca02fa2da463d14e27
+                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.219/Vulkan-Headers-v1.3.219.tar.gz
+                sha256: 3e5d1b727a5e3a5546e6b0709d520d3f522f0a83808277a313357140645be90c
                 x-checker-data:
                   type: anitya
                   project-id: 88835
@@ -64,20 +65,21 @@ modules:
                   url-template: https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz
 
       - name: mesa-demos
+        buildsystem: meson
         config-opts:
           - --bindir=/app/lib/mesa-demos
-          - --disable-osmesa
+          - -Dosmesa=disabled
         post-install:
           - mv -v /app/lib/mesa-demos/*info /app/bin/
         sources:
           - type: archive
-            url: https://mesa.freedesktop.org/archive/demos/mesa-demos-8.4.0.tar.bz2
-            sha256: 01e99c94a0184e63e796728af89bfac559795fb2a0d6f506fa900455ca5fff7d
+            url: https://mesa.freedesktop.org/archive/demos/8.5.0/mesa-demos-8.5.0.tar.gz
+            sha256: 2472818cea452a34229d03084e7c81f94267d14a39c5287379de0fb1dc02caab
             x-checker-data:
               type: anitya
               project-id: 16781
               stable-only: true
-              url-template: https://mesa.freedesktop.org/archive/demos/mesa-demos-$version.tar.bz2
+              url-template: https://mesa.freedesktop.org/archive/demos/$version/mesa-demos-$version.tar.gz
         cleanup:
           - /lib/mesa-demos
         modules:

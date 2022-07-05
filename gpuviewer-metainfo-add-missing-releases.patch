@@ -1,0 +1,12 @@
+diff --git a/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml b/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
+index 5e52f80..6031d73 100644
+--- a/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
++++ b/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
+@@ -30,6 +30,7 @@
+     </screenshots>
+     <content_rating type="oars-1.1"/>
+     <releases>
++        <release version="1.42" date="2022-07-05"/>
+         <release version="1.40" date="2022-04-28"/>
+         <release version="1.38" date="2022-03-21"/>
+         <release version="1.37" date="2021-12-06"/>
