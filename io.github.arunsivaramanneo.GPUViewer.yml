@@ -23,8 +23,8 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.40/GPU-Viewer-1.40.tar.gz
-        sha256: 2249b69b7d056d4fee7a87dc402b3f75ec57608a667ea3cdeed19b48b9c30103
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v1.42/GPU-Viewer-1.42.tar.gz
+        sha256: d4146b97791e97d19b17c37ca344db57f30aa897db04a4b4252f54af0e831427
         x-checker-data:
           is-main-source: true
           type: json
@@ -33,7 +33,7 @@ modules:
           url-query: '"https://github.com/arunsivaramanneo/GPU-Viewer/archive/v" +
             $version + "/GPU-Viewer-" + $version + ".tar.gz"'
       - type: patch
-        path: gpuviewer-AppStream-MetaInfo-Add-missing-1.40-release.patch
+        path: gpuviewer-metainfo-add-missing-releases.patch
 
     modules:
       - name: vulkan-tools
