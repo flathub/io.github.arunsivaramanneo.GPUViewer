@@ -27,10 +27,11 @@ modules:
         sha256: 2249b69b7d056d4fee7a87dc402b3f75ec57608a667ea3cdeed19b48b9c30103
         x-checker-data:
           is-main-source: true
-          type: anitya
-          project-id: 235097
-          stable-only: true
-          url-template: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v$version/GPU-Viewer-$version.tar.gz
+          type: json
+          url: https://api.github.com/repos/arunsivaramanneo/GPU-Viewer/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: '"https://github.com/arunsivaramanneo/GPU-Viewer/archive/v" +
+            $version + "/GPU-Viewer-" + $version + ".tar.gz"'
       - type: patch
         path: gpuviewer-AppStream-MetaInfo-Add-missing-1.40-release.patch
 
