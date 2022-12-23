@@ -1,0 +1,25 @@
+From d9c10c379d383ab533d77b1e5d9164e870539d35 Mon Sep 17 00:00:00 2001
+From: tinywrkb <tinywrkb@gmail.com>
+Date: Mon, 9 Jan 2023 21:15:42 +0200
+Subject: [PATCH] correct default theme path
+
+---
+ Files/Filenames.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Files/Filenames.py b/Files/Filenames.py
+index 6001acc..3ade9a8 100644
+--- a/Files/Filenames.py
++++ b/Files/Filenames.py
+@@ -188,6 +188,6 @@ vdpauinfo_output_file = "/tmp/gpu-viewer/vdpauinfo.txt"
+ 
+ #---------------------------------------------- Themes Folder ----------------------------------------------------------------------------------------------------
+ 
+-Orchis_gtk_theme_folder = "/usr/share/themes/Orchis"
++Orchis_gtk_theme_folder = "/app/share/themes/Orchis"
+ Materia_gtk_theme_folder = "/usr/share/themes/Materia"
+ Roboto_font_folder = "/usr/share/fonts/truetype/roboto"
+\ No newline at end of file
+-- 
+2.39.0
+
