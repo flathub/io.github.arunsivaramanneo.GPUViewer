@@ -34,6 +34,9 @@ modules:
             $version + "/GPU-Viewer-" + $version + ".tar.gz"'
       - type: patch
         path: gpuviewer-metainfo-add-missing-releases.patch
+      - type: shell
+        commands:
+          - sed -i '/Orchis_gtk_theme_folder =/ s/usr/app/' Files/Filenames.py
 
     modules:
       - name: vulkan-tools
@@ -193,6 +196,59 @@ modules:
               url-template: https://xorg.freedesktop.org/archive/individual/app/xdpyinfo-$version.tar.xz
         cleanup:
           - /share/man
+
+      - name: gtk-orchis-theme
+        buildsystem: simple
+        build-commands:
+          - ./install.sh -d ${FLATPAK_DEST}/share/themes -t default -s standard
+        sources:
+          - type: archive
+            url: https://github.com/vinceliuice/orchis-theme/archive/2022-10-19/orchis-theme-2022-10-19.tar.gz
+            sha256: 7f40104b9842435f7cceee1139f809b5e089e3316664fb3ad6f894bf692e3746
+        cleanup:
+          - /share/themes/*/cinnamon
+          - /share/themes/*/gnome-shell
+          - /share/themes/*/gtk-2.0
+          - /share/themes/*/gtk-3.0
+          - /share/themes/*/metacity-1
+          - /share/themes/*/plank
+          - /share/themes/*/xfwm4
+          - /share/themes/*/COPYING
+        modules:
+          - name: sassc
+            sources:
+              - type: archive
+                url: https://github.com/sass/sassc/archive/3.6.2/sassc-3.6.2.tar.gz
+                sha256: 608dc9002b45a91d11ed59e352469ecc05e4f58fc1259fc9a9f5b8f0f8348a03
+                x-checker-data:
+                  type: anitya
+                  project-id: 12485
+                  stable-only: true
+                  url-template: https://github.com/sass/sassc/archive/$version/sassc-$version.tar.gz
+              - type: shell
+                commands:
+                  - autoreconf -fiv
+            cleanup:
+              - '*'
+            modules:
+              - name: libsass
+                config-opts:
+                  - --enable-shared
+                  - --disable-static
+                sources:
+                  - type: archive
+                    url: https://github.com/sass/libsass/archive/3.6.5/libsass-3.6.5.tar.gz
+                    sha256: 89d8f2c46ae2b1b826b58ce7dde966a176bac41975b82e84ad46b01a55080582
+                    x-checker-data:
+                      type: anitya
+                      project-id: 11766
+                      stable-only: true
+                      url-template: https://github.com/sass/libsass/archive/$version/libsass-$version.tar.gz
+                  - type: shell
+                    commands:
+                      - autoreconf -fiv
+                cleanup:
+                  - '*'
 
       - name: lsb-release-compat
         buildsystem: simple
