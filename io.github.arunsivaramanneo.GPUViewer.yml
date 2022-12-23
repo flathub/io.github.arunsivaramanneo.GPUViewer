@@ -1,7 +1,7 @@
 id: io.github.arunsivaramanneo.GPUViewer
-runtime: org.freedesktop.Platform
-sdk: org.freedesktop.Sdk
-runtime-version: '22.08'
+runtime: org.gnome.Platform
+sdk: org.gnome.Sdk
+runtime-version: '43'
 finish-args:
   - --device=dri
   - --share=ipc
