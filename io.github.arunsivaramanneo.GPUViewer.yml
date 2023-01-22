@@ -23,8 +23,8 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.13/GPU-Viewer-2.13.tar.gz
-        sha256: 388ff9b4b45e4d42213087485f4b56836aa29e92e5df37be5387c9c6cb405e32
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.15/GPU-Viewer-2.15.tar.gz
+        sha256: 7ca65e1959032f23f19fcf51527bf59637107f50b4af7744d634d26dbaba2c88
         x-checker-data:
           is-main-source: true
           type: json
