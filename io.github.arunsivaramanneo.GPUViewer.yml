@@ -202,13 +202,14 @@ modules:
           - ./install.sh -d ${FLATPAK_DEST}/share/themes -t default -s standard
         sources:
           - type: archive
-            url: https://github.com/vinceliuice/orchis-theme/archive/2022-10-19/orchis-theme-2022-10-19.tar.gz
-            sha256: 7f40104b9842435f7cceee1139f809b5e089e3316664fb3ad6f894bf692e3746
+            url: https://github.com/vinceliuice/orchis-theme/archive/2023-01-15/orchis-theme-2023-01-15.tar.gz
+            sha256: 3a78d769360bf39939f3606775c178b8ec94c51ecb88eb770a485a3c1abc084a
             x-checker-data:
               type: json
               url: https://api.github.com/repos/vinceliuice/orchis-theme/releases/latest
               version-query: .tag_name
-              url-query: '"https://github.com/vinceliuice/orchis-theme/archive/" + $version + "/orchis-theme-" + $version + ".tar.gz"'
+              url-query: '"https://github.com/vinceliuice/orchis-theme/archive/" +
+                $version + "/orchis-theme-" + $version + ".tar.gz"'
         cleanup:
           - /share/themes/*/cinnamon
           - /share/themes/*/gnome-shell
