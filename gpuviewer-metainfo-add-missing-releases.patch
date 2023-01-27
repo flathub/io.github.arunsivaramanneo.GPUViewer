@@ -1,20 +1,22 @@
-From 8d02e076535f8d639a983bb63bd0458d2aa9d8a4 Mon Sep 17 00:00:00 2001
+From baa75264ef8114c57d7607bedd5fd3e63ae39cee Mon Sep 17 00:00:00 2001
 From: tinywrkb <tinywrkb@gmail.com>
 Date: Sun, 6 Nov 2022 00:04:32 +0200
 Subject: [PATCH] MetaInfo: Add missing releases
 
 ---
- data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml | 5 +++++
- 1 file changed, 5 insertions(+)
+ data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml b/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
-index 5e52f80..4b0a543 100644
+index 5e52f80..676a110 100644
 --- a/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
 +++ b/data/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
-@@ -30,6 +30,11 @@
+@@ -30,6 +30,13 @@
      </screenshots>
      <content_rating type="oars-1.1"/>
      <releases>
++        <release version="2.20" date="2023-01-24"/>
++        <release version="2.15" date="2023-01-21"/>
 +        <release version="2.13" date="2023-01-13"/>
 +        <release version="2.12" date="2023-01-06"/>
 +        <release version="2.02" date="2022-12-23"/>
