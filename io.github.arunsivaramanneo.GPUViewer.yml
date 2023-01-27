@@ -189,8 +189,8 @@ modules:
           - ./install.sh -d ${FLATPAK_DEST}/share/themes -t default -s standard
         sources:
           - type: archive
-            url: https://github.com/vinceliuice/orchis-theme/archive/2023-01-15/orchis-theme-2023-01-15.tar.gz
-            sha256: 3a78d769360bf39939f3606775c178b8ec94c51ecb88eb770a485a3c1abc084a
+            url: https://github.com/vinceliuice/orchis-theme/archive/2023-01-25/orchis-theme-2023-01-25.tar.gz
+            sha256: 1fa708a5d18db648bae1bd1e3c3998dd2352fd9f45d2f3c8db8c315aa685a1d5
             x-checker-data:
               type: json
               url: https://api.github.com/repos/vinceliuice/orchis-theme/releases/latest
