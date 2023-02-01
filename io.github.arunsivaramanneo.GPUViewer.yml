@@ -33,8 +33,6 @@ modules:
           url-query: '"https://github.com/arunsivaramanneo/GPU-Viewer/archive/v" +
             $version + "/GPU-Viewer-" + $version + ".tar.gz"'
       - type: patch
-        path: gpuviewer-metainfo-add-missing-releases.patch
-      - type: patch
         path: gpuviewer-theme-path.patch
 
     modules:
