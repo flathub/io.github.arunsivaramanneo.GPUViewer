@@ -23,8 +23,8 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.20/GPU-Viewer-2.20.tar.gz
-        sha256: 2561406f2c747b944595d492becbad27378a2c8821e6317e32b7eae635e1f19d
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.22/GPU-Viewer-2.22.tar.gz
+        sha256: c9eaa3786191a64f63d0f5fb842beb7b4265141ed0299ed75f6b4ccf54506e83
         x-checker-data:
           is-main-source: true
           type: json
@@ -32,8 +32,6 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: '"https://github.com/arunsivaramanneo/GPU-Viewer/archive/v" +
             $version + "/GPU-Viewer-" + $version + ".tar.gz"'
-      - type: patch
-        path: gpuviewer-metainfo-add-missing-releases.patch
       - type: patch
         path: gpuviewer-theme-path.patch
 
