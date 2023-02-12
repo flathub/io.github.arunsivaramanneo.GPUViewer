@@ -23,8 +23,8 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.22/GPU-Viewer-2.22.tar.gz
-        sha256: c9eaa3786191a64f63d0f5fb842beb7b4265141ed0299ed75f6b4ccf54506e83
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.24/GPU-Viewer-2.24.tar.gz
+        sha256: db25dd4b3792fc52d6cb344abe5e733ac445b045ed067f9a44258439f2e04bba
         x-checker-data:
           is-main-source: true
           type: json
@@ -125,8 +125,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2022.09.30/OpenCL-Headers-v2022.09.30.tar.gz
-                sha256: 0ae857ecb28af95a420c800b21ed2d0f437503e104f841ab8db249df5f4fbe5c
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.02.06/OpenCL-Headers-v2023.02.06.tar.gz
+                sha256: 464d1b04a5e185739065b2d86e4cebf02c154c416d63e6067a5060d7c053c79a
                 x-checker-data:
                   type: anitya
                   project-id: 223257
