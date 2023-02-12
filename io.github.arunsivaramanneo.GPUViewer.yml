@@ -23,8 +23,8 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.22/GPU-Viewer-2.22.tar.gz
-        sha256: c9eaa3786191a64f63d0f5fb842beb7b4265141ed0299ed75f6b4ccf54506e83
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.24/GPU-Viewer-2.24.tar.gz
+        sha256: db25dd4b3792fc52d6cb344abe5e733ac445b045ed067f9a44258439f2e04bba
         x-checker-data:
           is-main-source: true
           type: json
@@ -44,8 +44,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.239/Vulkan-Tools-1.3.239.tar.gz
-            sha256: 39d3798ef957d7bdb1bc2cf6288311eb84e5d11d00847612781b597e773409e7
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.240/Vulkan-Tools-1.3.240.tar.gz
+            sha256: cca1080198eacf0cd247c700f8c5f961456440909c692fd2160042e94ba35317
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -56,8 +56,8 @@ modules:
             buildsystem: cmake-ninja
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.239/Vulkan-Headers-v1.3.239.tar.gz
-                sha256: 86ef8969b96cf391dc86b9c4e5745b8ecaa12ebdaaefd3d8e38bc98e15f30653
+                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.240/Vulkan-Headers-v1.3.240.tar.gz
+                sha256: 98734513f4847254ef5bdd31a9c897f64938dac0733b9aea9e4b3fd339d82281
 #               x-checker-data:
 #                 type: anitya
 #                 project-id: 88835
@@ -125,8 +125,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2022.09.30/OpenCL-Headers-v2022.09.30.tar.gz
-                sha256: 0ae857ecb28af95a420c800b21ed2d0f437503e104f841ab8db249df5f4fbe5c
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.02.06/OpenCL-Headers-v2023.02.06.tar.gz
+                sha256: 464d1b04a5e185739065b2d86e4cebf02c154c416d63e6067a5060d7c053c79a
                 x-checker-data:
                   type: anitya
                   project-id: 223257
