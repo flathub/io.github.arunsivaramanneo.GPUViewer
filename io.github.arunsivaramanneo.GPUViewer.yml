@@ -23,8 +23,8 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.26/GPU-Viewer-2.26.tar.gz
-        sha256: 08ad07384216596eb4ff5c96c2667c4b68f67a1080a3316cbc4707ab8209fdfd
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.28/GPU-Viewer-2.28.tar.gz
+        sha256: 5a01a2310eadbe09b83d87d984e7ca917e700cef91f11ec50c4cd352c09b34ee
         x-checker-data:
           is-main-source: true
           type: json
@@ -125,8 +125,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.02.06/OpenCL-Headers-v2023.02.06.tar.gz
-                sha256: 464d1b04a5e185739065b2d86e4cebf02c154c416d63e6067a5060d7c053c79a
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.04.17/OpenCL-Headers-v2023.04.17.tar.gz
+                sha256: 0ce992f4167f958f68a37918dec6325be18f848dee29a4521c633aae3304915d
                 x-checker-data:
                   type: anitya
                   project-id: 223257
@@ -137,8 +137,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.42.2/pygobject-3.42.2.tar.gz
-            sha256: 56e6833f875bfe55409c780b9c87a9fc426c1cd55b3c65836de9d384d206201f
+            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.44.1/pygobject-3.44.1.tar.gz
+            sha256: f2c3f85161c32791a60c2f2b54fdb89e38f1acde0f6a8f0be4e0e36f73f144ad
             x-checker-data:
               type: anitya
               project-id: 13158
@@ -187,8 +187,8 @@ modules:
           - ./install.sh -d ${FLATPAK_DEST}/share/themes -t default -s standard
         sources:
           - type: archive
-            url: https://github.com/vinceliuice/orchis-theme/archive/2023-02-26/orchis-theme-2023-02-26.tar.gz
-            sha256: dd7951f2bcc3dd8e1f034b116bb5c6793ec09b5cc5101a4e2745b0c0a0c23bdb
+            url: https://github.com/vinceliuice/orchis-theme/archive/2023-04-08/orchis-theme-2023-04-08.tar.gz
+            sha256: 26912fdf88ed6a0cae03e7ce27b5a2db7d32a9007882cfd3397c87b1fbd2d47e
             x-checker-data:
               type: json
               url: https://api.github.com/repos/vinceliuice/orchis-theme/releases/latest
