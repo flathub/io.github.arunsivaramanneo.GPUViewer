@@ -23,8 +23,8 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.26/GPU-Viewer-2.26.tar.gz
-        sha256: 08ad07384216596eb4ff5c96c2667c4b68f67a1080a3316cbc4707ab8209fdfd
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.28/GPU-Viewer-2.28.tar.gz
+        sha256: 5a01a2310eadbe09b83d87d984e7ca917e700cef91f11ec50c4cd352c09b34ee
         x-checker-data:
           is-main-source: true
           type: json
@@ -187,8 +187,8 @@ modules:
           - ./install.sh -d ${FLATPAK_DEST}/share/themes -t default -s standard
         sources:
           - type: archive
-            url: https://github.com/vinceliuice/orchis-theme/archive/2023-02-26/orchis-theme-2023-02-26.tar.gz
-            sha256: dd7951f2bcc3dd8e1f034b116bb5c6793ec09b5cc5101a4e2745b0c0a0c23bdb
+            url: https://github.com/vinceliuice/orchis-theme/archive/2023-04-08/orchis-theme-2023-04-08.tar.gz
+            sha256: 26912fdf88ed6a0cae03e7ce27b5a2db7d32a9007882cfd3397c87b1fbd2d47e
             x-checker-data:
               type: json
               url: https://api.github.com/repos/vinceliuice/orchis-theme/releases/latest
