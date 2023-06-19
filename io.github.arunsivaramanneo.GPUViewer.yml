@@ -23,8 +23,8 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.26/GPU-Viewer-2.26.tar.gz
-        sha256: 08ad07384216596eb4ff5c96c2667c4b68f67a1080a3316cbc4707ab8209fdfd
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.29/GPU-Viewer-2.29.tar.gz
+        sha256: e2035829606652c15a361cc01a2fb7fe4ba363b653a152120a7f3dc9d77edb26
         x-checker-data:
           is-main-source: true
           type: json
@@ -125,8 +125,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.02.06/OpenCL-Headers-v2023.02.06.tar.gz
-                sha256: 464d1b04a5e185739065b2d86e4cebf02c154c416d63e6067a5060d7c053c79a
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.04.17/OpenCL-Headers-v2023.04.17.tar.gz
+                sha256: 0ce992f4167f958f68a37918dec6325be18f848dee29a4521c633aae3304915d
                 x-checker-data:
                   type: anitya
                   project-id: 223257
@@ -137,8 +137,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.42.2/pygobject-3.42.2.tar.gz
-            sha256: 56e6833f875bfe55409c780b9c87a9fc426c1cd55b3c65836de9d384d206201f
+            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.44.1/pygobject-3.44.1.tar.gz
+            sha256: f2c3f85161c32791a60c2f2b54fdb89e38f1acde0f6a8f0be4e0e36f73f144ad
             x-checker-data:
               type: anitya
               project-id: 13158
@@ -149,8 +149,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://github.com/pygobject/pycairo/archive/v1.23.0/pycairo-v1.23.0.tar.gz
-                sha256: caf1bdbae0d6e091e0b39a652574cf4ad610655f09da81b8a2e68f6fd3fa3147
+                url: https://github.com/pygobject/pycairo/archive/v1.24.0/pycairo-v1.24.0.tar.gz
+                sha256: 94f4e743853ac02b0671a65fec1d0e3c31fd7f13256498303d9530c69a2d9903
                 x-checker-data:
                   type: anitya
                   project-id: 13166
@@ -187,8 +187,8 @@ modules:
           - ./install.sh -d ${FLATPAK_DEST}/share/themes -t default -s standard
         sources:
           - type: archive
-            url: https://github.com/vinceliuice/orchis-theme/archive/2023-02-26/orchis-theme-2023-02-26.tar.gz
-            sha256: dd7951f2bcc3dd8e1f034b116bb5c6793ec09b5cc5101a4e2745b0c0a0c23bdb
+            url: https://github.com/vinceliuice/orchis-theme/archive/2023-05-27/orchis-theme-2023-05-27.tar.gz
+            sha256: 4e7b9511a6d816f65356e2f2493ef9764471662213cf80e7d9003420be9ed935
             x-checker-data:
               type: json
               url: https://api.github.com/repos/vinceliuice/orchis-theme/releases/latest
