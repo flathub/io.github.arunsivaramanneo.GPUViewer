@@ -1,11 +1,11 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.gnome.Platform
 sdk: org.gnome.Sdk
-runtime-version: '43'
+runtime-version: '44'
 finish-args:
   - --device=dri
   - --share=ipc
-  - --socket=x11
+  - --socket=fallback-x11
   - --socket=wayland
 command: gpu-viewer
 cleanup:
@@ -23,8 +23,8 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.26/GPU-Viewer-2.26.tar.gz
-        sha256: 08ad07384216596eb4ff5c96c2667c4b68f67a1080a3316cbc4707ab8209fdfd
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.29/GPU-Viewer-2.29.tar.gz
+        sha256: e2035829606652c15a361cc01a2fb7fe4ba363b653a152120a7f3dc9d77edb26
         x-checker-data:
           is-main-source: true
           type: json
@@ -44,8 +44,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.240/Vulkan-Tools-1.3.240.tar.gz
-            sha256: cca1080198eacf0cd247c700f8c5f961456440909c692fd2160042e94ba35317
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.254/Vulkan-Tools-1.3.254.tar.gz
+            sha256: 9d46697d0df39e20950db2f8581b63b3d02ab5dce6b67777b9f7bdf876ae4921
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -56,8 +56,8 @@ modules:
             buildsystem: cmake-ninja
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.240/Vulkan-Headers-v1.3.240.tar.gz
-                sha256: 98734513f4847254ef5bdd31a9c897f64938dac0733b9aea9e4b3fd339d82281
+                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.254/Vulkan-Headers-v1.3.254.tar.gz
+                sha256: 6be000a33b665ecac05971819b4c29ba5e21b800627f288f4d3a0b28e86b290f
 #               x-checker-data:
 #                 type: anitya
 #                 project-id: 88835
@@ -125,8 +125,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.02.06/OpenCL-Headers-v2023.02.06.tar.gz
-                sha256: 464d1b04a5e185739065b2d86e4cebf02c154c416d63e6067a5060d7c053c79a
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.04.17/OpenCL-Headers-v2023.04.17.tar.gz
+                sha256: 0ce992f4167f958f68a37918dec6325be18f848dee29a4521c633aae3304915d
                 x-checker-data:
                   type: anitya
                   project-id: 223257
@@ -137,8 +137,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.42.2/pygobject-3.42.2.tar.gz
-            sha256: 56e6833f875bfe55409c780b9c87a9fc426c1cd55b3c65836de9d384d206201f
+            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.44.1/pygobject-3.44.1.tar.gz
+            sha256: f2c3f85161c32791a60c2f2b54fdb89e38f1acde0f6a8f0be4e0e36f73f144ad
             x-checker-data:
               type: anitya
               project-id: 13158
@@ -149,8 +149,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://github.com/pygobject/pycairo/archive/v1.23.0/pycairo-v1.23.0.tar.gz
-                sha256: caf1bdbae0d6e091e0b39a652574cf4ad610655f09da81b8a2e68f6fd3fa3147
+                url: https://github.com/pygobject/pycairo/archive/v1.24.0/pycairo-v1.24.0.tar.gz
+                sha256: 94f4e743853ac02b0671a65fec1d0e3c31fd7f13256498303d9530c69a2d9903
                 x-checker-data:
                   type: anitya
                   project-id: 13166
