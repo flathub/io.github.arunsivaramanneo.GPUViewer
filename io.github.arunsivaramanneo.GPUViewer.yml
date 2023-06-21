@@ -32,8 +32,6 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: '"https://github.com/arunsivaramanneo/GPU-Viewer/archive/v" +
             $version + "/GPU-Viewer-" + $version + ".tar.gz"'
-      - type: patch
-        path: gpuviewer-theme-path.patch
 
     modules:
       - name: vulkan-tools
@@ -44,8 +42,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.254/Vulkan-Tools-1.3.254.tar.gz
-            sha256: 9d46697d0df39e20950db2f8581b63b3d02ab5dce6b67777b9f7bdf876ae4921
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.250/Vulkan-Tools-1.3.250.tar.gz
+            sha256: a1cd4f7d8d58bec26efb1e5ea73f82dcf36a9662d55401b81a783071b211a35a
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -56,8 +54,8 @@ modules:
             buildsystem: cmake-ninja
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.254/Vulkan-Headers-v1.3.254.tar.gz
-                sha256: 6be000a33b665ecac05971819b4c29ba5e21b800627f288f4d3a0b28e86b290f
+                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.250/Vulkan-Headers-v1.3.250.tar.gz
+                sha256: c4c5a706a1f8f4d329fec2909b8c3fef4a4be043f393dbde5ce1439daa1194ab
 #               x-checker-data:
 #                 type: anitya
 #                 project-id: 88835
@@ -180,65 +178,6 @@ modules:
               project-id: 16031
               stable-only: true
               url-template: https://gitlab.freedesktop.org/vdpau/vdpauinfo/-/archive/$version/vdpauinfo-$version.tar.gz
-
-      - name: gtk-orchis-theme
-        buildsystem: simple
-        build-commands:
-          - ./install.sh -d ${FLATPAK_DEST}/share/themes -t default -s standard
-        sources:
-          - type: archive
-            url: https://github.com/vinceliuice/orchis-theme/archive/2023-05-27/orchis-theme-2023-05-27.tar.gz
-            sha256: 4e7b9511a6d816f65356e2f2493ef9764471662213cf80e7d9003420be9ed935
-            x-checker-data:
-              type: json
-              url: https://api.github.com/repos/vinceliuice/orchis-theme/releases/latest
-              version-query: .tag_name
-              url-query: '"https://github.com/vinceliuice/orchis-theme/archive/" +
-                $version + "/orchis-theme-" + $version + ".tar.gz"'
-        cleanup:
-          - /share/themes/*/cinnamon
-          - /share/themes/*/gnome-shell
-          - /share/themes/*/gtk-2.0
-          - /share/themes/*/gtk-3.0
-          - /share/themes/*/metacity-1
-          - /share/themes/*/plank
-          - /share/themes/*/xfwm4
-          - /share/themes/*/COPYING
-        modules:
-          - name: sassc
-            sources:
-              - type: archive
-                url: https://github.com/sass/sassc/archive/3.6.2/sassc-3.6.2.tar.gz
-                sha256: 608dc9002b45a91d11ed59e352469ecc05e4f58fc1259fc9a9f5b8f0f8348a03
-                x-checker-data:
-                  type: anitya
-                  project-id: 12485
-                  stable-only: true
-                  url-template: https://github.com/sass/sassc/archive/$version/sassc-$version.tar.gz
-              - type: shell
-                commands:
-                  - autoreconf -fiv
-            cleanup:
-              - '*'
-            modules:
-              - name: libsass
-                config-opts:
-                  - --enable-shared
-                  - --disable-static
-                sources:
-                  - type: archive
-                    url: https://github.com/sass/libsass/archive/3.6.5/libsass-3.6.5.tar.gz
-                    sha256: 89d8f2c46ae2b1b826b58ce7dde966a176bac41975b82e84ad46b01a55080582
-                    x-checker-data:
-                      type: anitya
-                      project-id: 11766
-                      stable-only: true
-                      url-template: https://github.com/sass/libsass/archive/$version/libsass-$version.tar.gz
-                  - type: shell
-                    commands:
-                      - autoreconf -fiv
-                cleanup:
-                  - '*'
 
       - name: lsb-release-compat
         buildsystem: simple
