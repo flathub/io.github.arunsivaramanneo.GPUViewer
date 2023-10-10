@@ -29,8 +29,7 @@ modules:
           type: json
           url: https://api.github.com/repos/arunsivaramanneo/GPU-Viewer/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query: '"https://github.com/arunsivaramanneo/GPU-Viewer/archive/v" +
-            $version + "/GPU-Viewer-" + $version + ".tar.gz"'
+          url-query: .tarball_url
 
     modules:
       - name: vulkan-tools
