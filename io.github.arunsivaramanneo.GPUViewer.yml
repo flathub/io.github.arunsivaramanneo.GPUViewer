@@ -1,7 +1,7 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.gnome.Platform
 sdk: org.gnome.Sdk
-runtime-version: '44'
+runtime-version: '45'
 finish-args:
   - --device=dri
   - --share=ipc
@@ -52,7 +52,7 @@ modules:
             buildsystem: cmake-ninja
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.250/Vulkan-Headers-v1.3.250.tar.gz
+                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.250/Vulkan-Headers-v1.3.279.tar.gz
                 sha256: c4c5a706a1f8f4d329fec2909b8c3fef4a4be043f393dbde5ce1439daa1194ab
 #               x-checker-data:
 #                 type: anitya
