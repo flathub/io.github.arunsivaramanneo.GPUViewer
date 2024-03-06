@@ -186,3 +186,5 @@ modules:
             url: https://gitlab.com/nanonyme/lsb-release-compat.git
             branch: master
             commit: f4f908b62dcc9cd081eb2a42b6ad7cf98db4bb10
+developer id: tld.vendor
+  name: Arun Sivaraman
