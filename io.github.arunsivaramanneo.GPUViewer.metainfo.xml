@@ -3,8 +3,8 @@
     <id>io.github.arunsivaramanneo.GPUViewer</id>
     <launchable type="desktop-id">io.github.arunsivaramanneo.GPUViewer.desktop</launchable>
     <name>GPU-Viewer</name>
-    <developer id="tld.vendor">
-      <name>Developer name</name>
+    <developer id="io.github.arunsivaramanneo.GPUViewer">
+      <name>Arun Sivaraman</name>
     </developer>
     <summary>A front-end to glxinfo, vulkaninfo, clinfo and es2_info</summary>
     <description>
