@@ -22,7 +22,7 @@ modules:
       - python -m compileall /app/share/gpu-viewer/Files
     sources:
       - type: archive
-        url: https://api.github.com/repos/arunsivaramanneo/GPU-Viewer/tarball/v3.02
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/refs/tags/v3.02.zip
         sha256: d97bc851419adf359dd082e242f2895627f67f096dfa5fb39b3206a23e656e21
         x-checker-data:
           is-main-source: true
