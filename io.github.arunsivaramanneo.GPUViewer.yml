@@ -20,6 +20,7 @@ modules:
       # latest desktop-file-utils release (0.26) doesn't support desktop file spec v1.5
       - desktop-file-edit --set-key=Version --set-value=1.4 /app/share/applications/${FLATPAK_ID}.desktop
       - python -m compileall /app/share/gpu-viewer/Files
+      - install -Dm644 ../io.github.arunsivaramanneo.GPUViewer.metainfo.xml /app/share/metainfo/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
     sources:
       - type: archive
         url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v2.29/GPU-Viewer-2.29.tar.gz
@@ -30,6 +31,8 @@ modules:
           url: https://api.github.com/repos/arunsivaramanneo/GPU-Viewer/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .tarball_url
+      - type: file
+        path: io.github.arunsivaramanneo.GPUViewer.metainfo.xml
 
     modules:
       - name: vulkan-tools
