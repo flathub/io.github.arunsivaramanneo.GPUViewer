@@ -87,7 +87,7 @@ modules:
             build-options:
               cflags: -fcommon
             config-opts:
-              - -DCMAKE_BUILD_TYPE=None
+              - -DCMAKE_BUILD_TYPE=RelWithDebInfo
               - -DFREEGLUT_BUILD_STATIC_LIBS=OFF
               - -DOpenGL_GL_PREFERENCE=LEGACY
             sources:
@@ -116,7 +116,7 @@ modules:
               url-template: https://github.com/Oblomov/clinfo/archive/$version/clinfo-$version.tar.gz
         modules:
           - name: opencl-headers
-            buildsystem: cmake
+            buildsystem: cmake-ninja
             config-opts:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
@@ -184,5 +184,4 @@ modules:
         sources:
           - type: git
             url: https://gitlab.com/nanonyme/lsb-release-compat.git
-            branch: master
             commit: f4f908b62dcc9cd081eb2a42b6ad7cf98db4bb10
