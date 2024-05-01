@@ -1,7 +1,7 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.gnome.Platform
 sdk: org.gnome.Sdk
-runtime-version: '44'
+runtime-version: '46'
 finish-args:
   - --device=dri
   - --share=ipc
