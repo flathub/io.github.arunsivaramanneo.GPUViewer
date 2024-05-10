@@ -23,8 +23,8 @@ modules:
       - install -Dm644 ../io.github.arunsivaramanneo.GPUViewer.metainfo.xml /app/share/metainfo/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.04/GPU-Viewer-3.04.tar.gz
-        sha256: cb45a5e8bcd43e678f5a19e9f001573dea2ebca4fb5f8d5d3909c6b4a72827b0
+        url: https://api.github.com/repos/arunsivaramanneo/GPU-Viewer/tarball/v3.04
+        sha256: f4ee3e4cf9ff3be1b0a6867b7ed130d578056ba35e11512a607e0ca7143bef8b
         x-checker-data:
           is-main-source: true
           type: json
@@ -124,8 +124,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.04.17/OpenCL-Headers-v2023.04.17.tar.gz
-                sha256: 0ce992f4167f958f68a37918dec6325be18f848dee29a4521c633aae3304915d
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.12.14/OpenCL-Headers-v2023.12.14.tar.gz
+                sha256: 407d5e109a70ec1b6cd3380ce357c21e3d3651a91caae6d0d8e1719c69a1791d
                 x-checker-data:
                   type: anitya
                   project-id: 223257
@@ -136,8 +136,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.44.1/pygobject-3.44.1.tar.gz
-            sha256: f2c3f85161c32791a60c2f2b54fdb89e38f1acde0f6a8f0be4e0e36f73f144ad
+            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.48.2/pygobject-3.48.2.tar.gz
+            sha256: 390ab9938eff280fd05e1004b65be588b9ee8af0005d1836d63fd6dbfd8ee9ae
             x-checker-data:
               type: anitya
               project-id: 13158
@@ -148,8 +148,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://github.com/pygobject/pycairo/archive/v1.24.0/pycairo-v1.24.0.tar.gz
-                sha256: 94f4e743853ac02b0671a65fec1d0e3c31fd7f13256498303d9530c69a2d9903
+                url: https://github.com/pygobject/pycairo/archive/v1.26.0/pycairo-v1.26.0.tar.gz
+                sha256: b969ca68551c4ba37d08faa0da3ddae090b489062e8008f84db8e60bbe4ae9d8
                 x-checker-data:
                   type: anitya
                   project-id: 13166
@@ -163,8 +163,8 @@ modules:
             --prefix=${FLATPAK_DEST} "click" --no-build-isolation
         sources:
           - type: file
-            url: https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz
-            sha256: 7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e
+            url: https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz
+            sha256: ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de
             x-checker-data:
               type: pypi
               name: click
