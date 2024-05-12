@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.261/Vulkan-Tools-1.3.261.tar.gz
-            sha256: 2e9a1b380f4e494934c72e2b2fb77d2c3ae03ba19fd36ffad65529413108db2f
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.270/Vulkan-Tools-1.3.270.tar.gz
+            sha256: 8b570500f99a8133fff1a55e82dc7bf2bb5afacdfecd6fc08c45d2fe2a85d9ad
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
