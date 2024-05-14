@@ -23,8 +23,8 @@ modules:
       - install -Dm644 ../io.github.arunsivaramanneo.GPUViewer.metainfo.xml /app/share/metainfo/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.04/GPU-Viewer-3.04.tar.gz
-        sha256: cb45a5e8bcd43e678f5a19e9f001573dea2ebca4fb5f8d5d3909c6b4a72827b0
+        url: https://api.github.com/repos/arunsivaramanneo/GPU-Viewer/tarball/v3.04
+        sha256: f4ee3e4cf9ff3be1b0a6867b7ed130d578056ba35e11512a607e0ca7143bef8b
         x-checker-data:
           is-main-source: true
           type: json
@@ -124,8 +124,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2023.12.14/OpenCL-Headers-v2023.12.14.tar.gz
-                sha256: 407d5e109a70ec1b6cd3380ce357c21e3d3651a91caae6d0d8e1719c69a1791d
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2024.05.08/OpenCL-Headers-v2024.05.08.tar.gz
+                sha256: 3c3dd236d35f4960028f4f58ce8d963fb63f3d50251d1e9854b76f1caab9a309
                 x-checker-data:
                   type: anitya
                   project-id: 223257
