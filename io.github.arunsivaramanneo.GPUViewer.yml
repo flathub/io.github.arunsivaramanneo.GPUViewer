@@ -50,6 +50,18 @@ modules:
 #             project-id: 242111
 #             stable-only: true
 #             url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz
+    modules:
+      - name: vulkan-loader
+        buildsystem: cmake-ninja
+        sources:
+          - type: archive
+            url: https://github.com/KhronosGroup/Vulkan-Loader/archive/v1.3.270/Vulkan-Loader-1.3.270.tar.gz
+            sha256: 464293bd8be1545365518327168c676aadab7a88fa516054cd59fb3f6f83a1d5
+#           x-checker-data:
+#             type: anitya
+#             project-id: 242111
+#             stable-only: true
+#             url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz
         modules:
           - name: vulkan-headers
             buildsystem: cmake-ninja
