@@ -50,30 +50,30 @@ modules:
 #             project-id: 242111
 #             stable-only: true
 #             url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz
-      modules:
-        - name: vulkan-loader
-          buildsystem: cmake-ninja
-          sources:
-            - type: archive
-              url: https://github.com/KhronosGroup/Vulkan-Loader/archive/v1.3.270/Vulkan-Loader-1.3.270.tar.gz
-              sha256: 464293bd8be1545365518327168c676aadab7a88fa516054cd59fb3f6f83a1d5
-  #           x-checker-data:
-  #             type: anitya
-  #             project-id: 242111
-  #             stable-only: true
-  #             url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz
-          modules:
-            - name: vulkan-headers
-              buildsystem: cmake-ninja
-              sources:
-                - type: archive
-                  url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.270/Vulkan-Headers-v1.3.270.tar.gz
-                  sha256: 908e4e3881df8003744279ebdb0acd195c35d3792b2855e5488871956f90a7ee
-  #               x-checker-data:
-  #                 type: anitya
-  #                 project-id: 88835
-  #                 stable-only: true
-  #                 url-template: https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz
+        modules:
+          - name: vulkan-loader
+            buildsystem: cmake-ninja
+            sources:
+              - type: archive
+                url: https://github.com/KhronosGroup/Vulkan-Loader/archive/v1.3.270/Vulkan-Loader-1.3.270.tar.gz
+                sha256: 464293bd8be1545365518327168c676aadab7a88fa516054cd59fb3f6f83a1d5
+    #           x-checker-data:
+    #             type: anitya
+    #             project-id: 242111
+    #             stable-only: true
+    #             url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz
+            modules:
+              - name: vulkan-headers
+                buildsystem: cmake-ninja
+                sources:
+                  - type: archive
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.270/Vulkan-Headers-v1.3.270.tar.gz
+                    sha256: 908e4e3881df8003744279ebdb0acd195c35d3792b2855e5488871956f90a7ee
+    #               x-checker-data:
+    #                 type: anitya
+    #                 project-id: 88835
+    #                 stable-only: true
+    #                 url-template: https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz
 
       - name: mesa-demos
         buildsystem: meson
