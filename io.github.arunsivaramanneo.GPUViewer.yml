@@ -64,12 +64,12 @@ modules:
     #             url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz
 
             modules:
-              - name: vulkan-sdk
+              - name: volk
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Tools/archive/vulkan-sdk-1.3.283.0.tar.gz
-                    sha256: 586f3a1178b2a0635562c64b1152a8646dd3b50e03cd8320a6cfaee5b9d46310
+                    url: https://github.com/zeux/volk/archive/vulkan-sdk-1.3.283.0.tar.gz
+                    sha256: 872035f1f26c53b218632a3a8dbccbd276710aaabafb9bb1bc1a6c0633ee6aab
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
