@@ -66,6 +66,8 @@ modules:
             modules:
               - name: volk
                 buildsystem: cmake-ninja
+                config-opts:
+                  - -DVOLK_INSTALL=ON
                 sources:
                   - type: archive
                     url: https://github.com/zeux/volk/archive/vulkan-sdk-1.3.283.0.tar.gz
