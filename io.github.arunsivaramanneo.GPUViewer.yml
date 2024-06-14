@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.287/Vulkan-Tools-1.3.287.tar.gz
-            sha256: 960e438cf0d77ec651d118655a2265437e6befdb628899378e04f9bfd7658df2
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.3.288/Vulkan-Tools-1.3.288.tar.gz
+            sha256: f6f3bc87b2daba09c444aad49067ad204e19894babacb8a9b262571a94f321d2
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -69,8 +69,8 @@ modules:
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.287/Vulkan-Headers-v1.3.287.tar.gz
-                    sha256: 514d5e2425979ffe313b77f71274f199654b2d895719047636cb46d10555cd6b
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.288/Vulkan-Headers-v1.3.288.tar.gz
+                    sha256: 6f21dd9efe65fb7aeba6beaef2d274a0a31d32b4f494637b0d1a49853cf20ca6
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
@@ -109,8 +109,8 @@ modules:
               - -DOpenGL_GL_PREFERENCE=LEGACY
             sources:
               - type: archive
-                url: https://downloads.sourceforge.net/freeglut/freeglut-3.4.0.tar.gz
-                sha256: 3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec
+                url: https://downloads.sourceforge.net/freeglut/freeglut-3.6.0.tar.gz
+                sha256: 9c3d4d6516fbfa0280edc93c77698fb7303e443c1aaaf37d269e3288a6c3ea52
                 x-checker-data:
                   type: anitya
                   project-id: 846
