@@ -23,8 +23,8 @@ modules:
       - install -Dm644 ../io.github.arunsivaramanneo.GPUViewer.metainfo.xml /app/share/metainfo/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.04/GPU-Viewer-3.04.tar.gz
-        sha256: cb45a5e8bcd43e678f5a19e9f001573dea2ebca4fb5f8d5d3909c6b4a72827b0
+        url: https://api.github.com/repos/arunsivaramanneo/GPU-Viewer/tarball/v3.04
+        sha256: f4ee3e4cf9ff3be1b0a6867b7ed130d578056ba35e11512a607e0ca7143bef8b
         x-checker-data:
           is-main-source: true
           type: json
@@ -162,8 +162,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://github.com/pygobject/pycairo/archive/v1.26.0/pycairo-v1.26.0.tar.gz
-                sha256: b969ca68551c4ba37d08faa0da3ddae090b489062e8008f84db8e60bbe4ae9d8
+                url: https://github.com/pygobject/pycairo/archive/v1.26.1/pycairo-v1.26.1.tar.gz
+                sha256: 771900e37a54c8f109d69cd8faf5e0dd5df8c90b17465e9c436c9f1cef5b4c8f
                 x-checker-data:
                   type: anitya
                   project-id: 13166
