@@ -150,8 +150,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.48.2/pygobject-3.48.2.tar.gz
-            sha256: 390ab9938eff280fd05e1004b65be588b9ee8af0005d1836d63fd6dbfd8ee9ae
+            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.50.0/pygobject-3.50.0.tar.gz
+            sha256: 7ffce2399b25e743acf868c9eacd38800ad6fb78bf7409cee2ea87c20e5cc8ce
             x-checker-data:
               type: anitya
               project-id: 13158
@@ -162,8 +162,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://github.com/pygobject/pycairo/archive/v1.26.1/pycairo-v1.26.1.tar.gz
-                sha256: 771900e37a54c8f109d69cd8faf5e0dd5df8c90b17465e9c436c9f1cef5b4c8f
+                url: https://github.com/pygobject/pycairo/archive/v1.27.0/pycairo-v1.27.0.tar.gz
+                sha256: ce10721e4a5d74c53c8b7241e5ccfd4627fadb2830ecdae72524c077067ca247
                 x-checker-data:
                   type: anitya
                   project-id: 13166
