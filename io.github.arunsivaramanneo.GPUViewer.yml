@@ -23,8 +23,8 @@ modules:
       - install -Dm644 ../io.github.arunsivaramanneo.GPUViewer.metainfo.xml /app/share/metainfo/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.08/GPU-Viewer-3.08.tar.gz
-        sha256: f0067022789556bee468243223bd087c44d38628c7bbe3b0fd6c42ba1c3f2c87
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.10/GPU-Viewer-3.10.tar.gz
+        sha256: 228204e165f20cb311d6874aa846be695593f8063fa28f148369edd2bacf35ec
         x-checker-data:
           is-main-source: true
           type: json
