@@ -58,7 +58,7 @@ modules:
             sources:
               - type: archive
                 url: https://github.com/zeux/volk/archive/vulkan-sdk-1.4.304.1.tar.gz
-                sha256: 42974a5ce57a371c4a67b7d7c825fdee200b43d0f474349d6655549a6ecde9dd
+                sha256: 01f9facf95167f76d48c752c17ac602ffbc33d2e7157774e2c32a7de614b3687
 #               x-checker-data:
 #                 type: anitya
 #                 project-id: 88835
