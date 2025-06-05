@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.315/Vulkan-Tools-1.4.315.tar.gz
-            sha256: 2caefad09082941af790fda9a5dc5dd776f73124148b1d34ea0e2db1af67c0c0
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.316/Vulkan-Tools-1.4.316.tar.gz
+            sha256: 3d56d577b908e6627891b0f0c0fc5ba5ea9db0620d0a7755e2ef312e3629acbf
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -57,8 +57,8 @@ modules:
               - -DVOLK_INSTALL=ON
             sources:
               - type: archive
-                url: https://github.com/zeux/volk/archive/vulkan-sdk-1.4.309.0.tar.gz
-                sha256: 1724924d8e3dccf0c508887edb79d56d9dd11b0738eab5a44e2fa95b8a9ebe1c
+                url: https://github.com/zeux/volk/archive/vulkan-sdk-1.4.313.0.tar.gz
+                sha256: d86bcf1aff499f41a3e445b55df5e393a5ce49b1bda689eb7335b0a0a54a3c0b
 #               x-checker-data:
 #                 type: anitya
 #                 project-id: 88835
@@ -69,8 +69,8 @@ modules:
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.315/Vulkan-Headers-v1.4.315.tar.gz
-                    sha256: 77e3a78db853f8b9c5bc3ddef04e637bef9744e01d6a8c90ebe0ddcd916c0c50
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.316/Vulkan-Headers-v1.4.316.tar.gz
+                    sha256: 895caae5a68ef6bbec291c7df953a463c751bee1b6e628b612cfbc2ef83ee3a5
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
@@ -124,8 +124,8 @@ modules:
           - install -Dm755 -t /app/bin/ clinfo
         sources:
           - type: archive
-            url: https://github.com/Oblomov/clinfo/archive/3.0.23.01.25/clinfo-3.0.23.01.25.tar.gz
-            sha256: 6dcdada6c115873db78c7ffc62b9fc1ee7a2d08854a3bccea396df312e7331e3
+            url: https://github.com/Oblomov/clinfo/archive/3.0.25.02.14/clinfo-3.0.25.02.14.tar.gz
+            sha256: 48b77dc33315e6f760791a2984f98ea4bff28504ff37d460d8291585f49fcd3a
             x-checker-data:
               type: anitya
               project-id: 10503
