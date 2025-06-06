@@ -51,6 +51,20 @@ modules:
 #             stable-only: true
 #             url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz
         modules:
+          - name: vulkan-loader
+            buildsystem: cmake-ninja
+            config-opts:
+              - -DVOLK_INSTALL=ON
+            sources:
+              - type: archive
+                url: https://github.com/KhronosGroup/Vulkan-Loader/archive/v1.4.317/Vulkan-Loader-v1.4.317.tar.gz
+                sha256: e4e18585fe902ee04e86c1cdb2996b686bffef2cab02cb6079221fe69df05af8
+#               x-checker-data:
+#                 type: anitya
+#                 project-id: 88835
+#                 stable-only: true
+    #                 url-template: https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz    
+        modules:
           - name: volk
             buildsystem: cmake-ninja
             config-opts:
@@ -69,8 +83,8 @@ modules:
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.316/Vulkan-Headers-v1.4.316.tar.gz
-                    sha256: 895caae5a68ef6bbec291c7df953a463c751bee1b6e628b612cfbc2ef83ee3a5
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.317/Vulkan-Headers-v1.4.317.tar.gz
+                    sha256: 78665959d10b09061d8c3e21db8bf3e8b699e2d3d532fce850a32312dba7228b
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
