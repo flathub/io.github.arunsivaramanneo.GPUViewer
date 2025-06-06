@@ -84,7 +84,7 @@ modules:
                 sources:
                   - type: archive
                     url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.317/Vulkan-Headers-v1.4.317.tar.gz
-                    sha256: 895caae5a68ef6bbec291c7df953a463c751bee1b6e628b612cfbc2ef83ee3a5
+                    sha256: 78665959d10b09061d8c3e21db8bf3e8b699e2d3d532fce850a32312dba7228b
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
