@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.316/Vulkan-Tools-1.4.316.tar.gz
-            sha256: 3d56d577b908e6627891b0f0c0fc5ba5ea9db0620d0a7755e2ef312e3629acbf
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.317/Vulkan-Tools-1.4.317.tar.gz
+            sha256: 4586309ab5b2a9584fde62fd85b0ef5bb98b4cdbca9cb1ba3a2b4978dc2f355c
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -54,7 +54,9 @@ modules:
           - name: vulkan-loader
             buildsystem: cmake-ninja
             config-opts:
-              - -DVOLK_INSTALL=ON
+              - -DGLSLANG_INSTALL_DIR=/app
+              - -DVULKAN_HEADERS_INSTALL_DIR=/app
+              - -DCMAKE_BUILD_TYPE=Release
             sources:
               - type: archive
                 url: https://github.com/KhronosGroup/Vulkan-Loader/archive/v1.4.317/Vulkan-Loader-v1.4.317.tar.gz
