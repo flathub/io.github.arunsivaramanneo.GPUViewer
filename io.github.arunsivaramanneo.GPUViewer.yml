@@ -43,27 +43,13 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.316/Vulkan-Tools-1.4.316.tar.gz
-            sha256: 3d56d577b908e6627891b0f0c0fc5ba5ea9db0620d0a7755e2ef312e3629acbf
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.318/Vulkan-Tools-1.4.318.tar.gz
+            sha256: ba45d517ac48aa92d34d5ed49bd65e7765d61c2be93f4db367d6d0e8b932dc5b
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
 #             stable-only: true
 #             url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz
-        modules:
-          - name: vulkan-loader
-            buildsystem: cmake-ninja
-            config-opts:
-              - -DVOLK_INSTALL=ON
-            sources:
-              - type: archive
-                url: https://github.com/KhronosGroup/Vulkan-Loader/archive/v1.4.317/Vulkan-Loader-v1.4.317.tar.gz
-                sha256: e4e18585fe902ee04e86c1cdb2996b686bffef2cab02cb6079221fe69df05af8
-#               x-checker-data:
-#                 type: anitya
-#                 project-id: 88835
-#                 stable-only: true
-    #                 url-template: https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz    
         modules:
           - name: volk
             buildsystem: cmake-ninja
@@ -83,8 +69,8 @@ modules:
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.317/Vulkan-Headers-v1.4.317.tar.gz
-                    sha256: 78665959d10b09061d8c3e21db8bf3e8b699e2d3d532fce850a32312dba7228b
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.318/Vulkan-Headers-v1.4.318.tar.gz
+                    sha256: 24df01da8a5c54ee19dfee92259b7edcf44693875fbf96ccdfec69d6e3eef0bc
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
@@ -164,8 +150,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.50.0/pygobject-3.50.0.tar.gz
-            sha256: 7ffce2399b25e743acf868c9eacd38800ad6fb78bf7409cee2ea87c20e5cc8ce
+            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.52.3/pygobject-3.52.3.tar.gz
+            sha256: d02c5d369106f44fbe06d39a05911883b9376933fc1c8a77dbb17dec354ac510
             x-checker-data:
               type: anitya
               project-id: 13158
@@ -176,8 +162,8 @@ modules:
             buildsystem: meson
             sources:
               - type: archive
-                url: https://github.com/pygobject/pycairo/archive/v1.27.0/pycairo-v1.27.0.tar.gz
-                sha256: ce10721e4a5d74c53c8b7241e5ccfd4627fadb2830ecdae72524c077067ca247
+                url: https://github.com/pygobject/pycairo/archive/v1.28.0/pycairo-v1.28.0.tar.gz
+                sha256: e7e1a487820467a174512633f3ec4c49d567041e40f2d0135d14679045b054e9
                 x-checker-data:
                   type: anitya
                   project-id: 13166
