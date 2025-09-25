@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.325/Vulkan-Tools-1.4.325.tar.gz
-            sha256: 8d4e921a1a66633210c48b9ecc0a7b79e578139e85636d8255e7de7bf265d40b
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.327/Vulkan-Tools-1.4.327.tar.gz
+            sha256: af15c1bbddd84eaadc4df4d420490814dcca916e7c799b2ea7e94ea3b16c4c4b
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -69,8 +69,8 @@ modules:
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.325/Vulkan-Headers-v1.4.325.tar.gz
-                    sha256: 5743da4e203456ef0a0d17950d448b4f70e93a19abdc547aa33c15482b4fec17
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.327/Vulkan-Headers-v1.4.327.tar.gz
+                    sha256: 208c67277f810d3220c7b1107ff3b9f9a9f966f2a98404fd69d9a8f3a2b9e284
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
@@ -138,8 +138,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2025.06.13/OpenCL-Headers-v2025.06.13.tar.gz
-                sha256: 8bf2fda271c3511ee1cd9780b97446e9fa0cf2b0765cdd54aee60074a4567644
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2025.07.22/OpenCL-Headers-v2025.07.22.tar.gz
+                sha256: 98f0a3ea26b4aec051e533cb1750db2998ab8e82eda97269ed6efe66ec94a240
                 x-checker-data:
                   type: anitya
                   project-id: 223257
@@ -150,8 +150,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.50.0/pygobject-3.50.0.tar.gz
-            sha256: 7ffce2399b25e743acf868c9eacd38800ad6fb78bf7409cee2ea87c20e5cc8ce
+            url: https://gitlab.gnome.org/GNOME/pygobject/-/archive/3.54.2/pygobject-3.54.2.tar.gz
+            sha256: a01efa611b4d2b57c261cde82cb88e0de5904b3a344fcbf6c89df62677044e78
             x-checker-data:
               type: anitya
               project-id: 13158
