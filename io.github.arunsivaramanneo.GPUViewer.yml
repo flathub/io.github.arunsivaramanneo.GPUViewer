@@ -1,7 +1,7 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.gnome.Platform
 sdk: org.gnome.Sdk
-runtime-version: '48'
+runtime-version: '49'
 finish-args:
   - --device=dri
   - --share=ipc
@@ -23,8 +23,8 @@ modules:
       - install -Dm644 ../io.github.arunsivaramanneo.GPUViewer.metainfo.xml /app/share/metainfo/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.15/GPU-Viewer-3.15.tar.gz
-        sha256: b5ce001cd89b6978dcf11a48e21391db15e56e80f45886d8c6c5db4239b7260d
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.20/GPU-Viewer-3.20.tar.gz
+        sha256: 1529a0decec58a43cfd069abe2cc8197f248c84b7f4da4f8a0008a1bb6f5e76b
         x-checker-data:
           is-main-source: true
           type: json
@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.327/Vulkan-Tools-1.4.327.tar.gz
-            sha256: af15c1bbddd84eaadc4df4d420490814dcca916e7c799b2ea7e94ea3b16c4c4b
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.329/Vulkan-Tools-1.4.329.tar.gz
+            sha256: ecc8d354b4947cbb9c3086e5dbf095b079896d2fe047dec82423f9d88e2aea58
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -69,8 +69,8 @@ modules:
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.327/Vulkan-Headers-v1.4.327.tar.gz
-                    sha256: 208c67277f810d3220c7b1107ff3b9f9a9f966f2a98404fd69d9a8f3a2b9e284
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.329/Vulkan-Headers-v1.4.329.tar.gz
+                    sha256: 7ea67aabccdecc6ef616b4c243f563ac9bca945a63d4f4cca21f1bbcd828b18e
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
@@ -98,24 +98,6 @@ modules:
         modules:
           - shared-modules/glew/glew.json
           - shared-modules/glu/glu-9.json
-
-          - name: freeglut
-            buildsystem: cmake-ninja
-            build-options:
-              cflags: -fcommon
-            config-opts:
-              - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-              - -DFREEGLUT_BUILD_STATIC_LIBS=OFF
-              - -DOpenGL_GL_PREFERENCE=LEGACY
-            sources:
-              - type: archive
-                url: https://downloads.sourceforge.net/freeglut/freeglut-3.6.0.tar.gz
-                sha256: 9c3d4d6516fbfa0280edc93c77698fb7303e443c1aaaf37d269e3288a6c3ea52
-                x-checker-data:
-                  type: anitya
-                  project-id: 846
-                  stable-only: true
-                  url-template: https://downloads.sourceforge.net/freeglut/freeglut-$version.tar.gz
 
       - name: clinfo
         no-autogen: true
