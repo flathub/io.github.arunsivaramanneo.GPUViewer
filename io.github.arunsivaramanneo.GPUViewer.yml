@@ -99,24 +99,6 @@ modules:
           - shared-modules/glew/glew.json
           - shared-modules/glu/glu-9.json
 
-          - name: freeglut
-            buildsystem: cmake-ninja
-            build-options:
-              cflags: -fcommon
-            config-opts:
-              - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-              - -DFREEGLUT_BUILD_STATIC_LIBS=OFF
-              - -DOpenGL_GL_PREFERENCE=LEGACY
-            sources:
-              - type: archive
-                url: https://downloads.sourceforge.net/freeglut/freeglut-3.6.0.tar.gz
-                sha256: 9c3d4d6516fbfa0280edc93c77698fb7303e443c1aaaf37d269e3288a6c3ea52
-                x-checker-data:
-                  type: anitya
-                  project-id: 846
-                  stable-only: true
-                  url-template: https://downloads.sourceforge.net/freeglut/freeglut-$version.tar.gz
-
       - name: clinfo
         no-autogen: true
         no-make-install: true
