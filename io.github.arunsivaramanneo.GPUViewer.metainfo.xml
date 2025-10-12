@@ -9,7 +9,7 @@
     </developer>
     <description>
         <p>
-            This project aims to capture all the important details of glxinfo, vulkaninfo and clinfo in a GUI. The project is being developed using python 3 pygobject with GTK4. All the important details are extracted using glxinfo/vulkaninfo/clinfo with the combination of grep, CAT , AWK commands and displayed in the front-end. There is no hard OpenGL Programming involved, until glxinfo, vulkaninfo and clinfo works the GPU-viewer will also work.
+            This application aims to capture all the important details of glxinfo, vulkaninfo and clinfo in a GUI. The project is being developed using python 3 pygobject with GTK4. All the important details are extracted using glxinfo/vulkaninfo/clinfo with the combination of grep, CAT , AWK commands and displayed in the front-end. There is no hard OpenGL Programming involved, until glxinfo, vulkaninfo and clinfo works the GPU-viewer will also work.
         </p>
     </description>
     <metadata_license>CC0-1.0</metadata_license>
@@ -39,6 +39,7 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="3.20" date="2025-10-12"/>
         <release version="3.15" date="2025-06-21"/>
         <release version="3.13" date="2025-06-03"/>
         <release version="3.12" date="2025-03-22"/>
