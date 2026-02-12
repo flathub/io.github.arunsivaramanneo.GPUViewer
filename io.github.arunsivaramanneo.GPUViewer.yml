@@ -24,7 +24,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.25/GPU-Viewer-3.25.tar.gz
-        sha256: badaf1bb92302ba7b6b131d0027187dffa1421a969e1348b81988f7bbff31ea4
+        sha256: 05b1a3229a827f068bc120fed62a2fc4f9906f69e4d59e03d613e46576a76054
         x-checker-data:
           is-main-source: true
           type: json
