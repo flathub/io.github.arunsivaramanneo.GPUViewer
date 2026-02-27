@@ -19,28 +19,17 @@
     <url type="donation">https://www.paypal.com/donate/?hosted_button_id=7M3PMM78FBR4Q</url>
     <screenshots>
         <screenshot type="default">
-            <image>https://github.com/user-attachments/assets/1df5f790-9fa5-4f84-99d3-4f1171d9d6be</image>
+            <image>https://github.com/user-attachments/assets/2c8145dd-1e93-4c53-b69b-aecff3ada902</image>
         </screenshot>
         <screenshot>
-            <image>https://github.com/user-attachments/assets/cc0e4832-7b7e-4df9-9e41-d528ec6ad3a7</image>
-        </screenshot>
-        <screenshot>
-            <image>https://github.com/user-attachments/assets/2aae31b8-30ce-4c32-a709-f09068baf08d</image>
-        </screenshot>
-        <screenshot>
-            <image>https://github.com/user-attachments/assets/03f3c4ff-767b-4b71-a212-28eb72003508</image>
-        </screenshot>
-        <screenshot>
-            <image>https://github.com/user-attachments/assets/e5b5cfbf-cd04-46f8-8f4f-005d596c2f9f</image>
-        </screenshot>
-        <screenshot>
-            <image>https://github.com/user-attachments/assets/55dc9395-7891-4190-bc04-44c936388b0b</image>
+            <image>https://github.com/user-attachments/assets/ee41b8b3-d3be-4a05-bf18-e1f4e3d78dd7</image>
         </screenshot>
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
-        <release version="3.26" date="2025-02-16"/>
-        <release version="3.25" date="2025-02-12"/>
+        <release version="3.30" date="2026-02-27"/>
+        <release version="3.26" date="2026-02-16"/>
+        <release version="3.25" date="2026-02-12"/>
         <release version="3.23" date="2025-11-12"/>
         <release version="3.22" date="2025-11-24"/>
         <release version="3.20" date="2025-10-12"/>
