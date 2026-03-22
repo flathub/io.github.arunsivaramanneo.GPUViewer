@@ -1,7 +1,7 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.gnome.Platform
 sdk: org.gnome.Sdk
-runtime-version: '49'
+runtime-version: '50'
 finish-args:
   - --device=dri
   - --share=ipc
@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.342/Vulkan-Tools-1.4.342.tar.gz
-            sha256: ee9f209e5c8c695c7f2fd35021bebbeb9418698a2a362a18a7eedc6110bdc1c6
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.346/Vulkan-Tools-1.4.346.tar.gz
+            sha256: 6cf95c5bcf6c463a23cdfd61032617c7315dca056a407e0b4ea9f8d2dcc05344
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -69,8 +69,8 @@ modules:
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.342/Vulkan-Headers-v1.4.342.tar.gz
-                    sha256: 71ec294f7499d02ba3e8b5a37b72a036ceea458f55bcc8f4dda05fec3234a1b9
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.346/Vulkan-Headers-v1.4.346.tar.gz
+                    sha256: 5bb77f5d7b460e255a9e51affc00d64354986b55cf577d8eab28529cad01fc80
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
