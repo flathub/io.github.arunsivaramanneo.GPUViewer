@@ -23,8 +23,8 @@ modules:
       - install -Dm644 ../io.github.arunsivaramanneo.GPUViewer.metainfo.xml /app/share/metainfo/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.30/GPU-Viewer-3.30.tar.gz
-        sha256: 2aa7ab891ad0af1f592958c7e18f5568acada2cfc8766e12f586f6acf020806f
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v3.32/GPU-Viewer-3.32.tar.gz
+        sha256: 7c23b841fd10a4852fa1828da223ca0a795561a06f7f83f3928343af4617f7ea
         x-checker-data:
           is-main-source: true
           type: json
@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.346/Vulkan-Tools-1.4.346.tar.gz
-            sha256: 6cf95c5bcf6c463a23cdfd61032617c7315dca056a407e0b4ea9f8d2dcc05344
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.347/Vulkan-Tools-1.4.347.tar.gz
+            sha256: 4ed73bd973069633ef2b830c7b9f3ebcb7bc8aaac5783b9e5aa36c888e687a78
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -57,8 +57,8 @@ modules:
               - -DVOLK_INSTALL=ON
             sources:
               - type: archive
-                url: https://github.com/zeux/volk/archive/vulkan-sdk-1.4.335.0.tar.gz
-                sha256: ca2beb1ab9bf272895bc0152ef29b437d178d837bae4a76d0022b7bbafb3c483
+                url: https://github.com/zeux/volk/archive/vulkan-sdk-1.4.341.0.tar.gz
+                sha256: 42df539c70ffdaea259e317aef73524512f4093f6f4dafb36fa6cf2680c823b9
 #               x-checker-data:
 #                 type: anitya
 #                 project-id: 88835
@@ -69,8 +69,8 @@ modules:
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.346/Vulkan-Headers-v1.4.346.tar.gz
-                    sha256: 5bb77f5d7b460e255a9e51affc00d64354986b55cf577d8eab28529cad01fc80
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.347/Vulkan-Headers-v1.4.347.tar.gz
+                    sha256: 6611f09ed95aaf2c47ad76df9fb3e5455ce52d1ed3d0ef5dbc0d63e3208d3faa
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
