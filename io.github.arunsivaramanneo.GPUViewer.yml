@@ -23,8 +23,8 @@ modules:
       - install -Dm644 ../io.github.arunsivaramanneo.GPUViewer.metainfo.xml /app/share/metainfo/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v4.00/GPU-Viewer-4.00.tar.gz
-        sha256: c31a6bf4ed0fe5049f980b02545c821761dcd484844f2be742c20e607bbc8857
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v4.02/GPU-Viewer-4.02.tar.gz
+        sha256: ec89a5c71f2e820ce55477fa614597568bd56f4eebb048d2d0e13236b1826b0c
         x-checker-data:
           is-main-source: true
           type: json
@@ -43,8 +43,8 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.361/Vulkan-Tools-1.4.361.tar.gz
-            sha256: 76b6e50b5f2c5eaa653d92fb34491a2ecc30d892d6906277c2cbfc0c4f51a505
+            url: https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.362/Vulkan-Tools-1.4.362.tar.gz
+            sha256: 727d91780f04031ab6f47c05806616eb0ffad59b38d74b3ddd3773d182144b9b
 #           x-checker-data:
 #             type: anitya
 #             project-id: 242111
@@ -69,8 +69,8 @@ modules:
                 buildsystem: cmake-ninja
                 sources:
                   - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.361/Vulkan-Headers-v1.4.361.tar.gz
-                    sha256: dbcb3607bd4e2aee006bb92c056453ca4ed2c32fa19d1acd36448618e5516224
+                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.362/Vulkan-Headers-v1.4.362.tar.gz
+                    sha256: 8ec03e69ddb7281570823509c9d78124d2f4b27f77f5097c99191aa6e2191b1d
     #               x-checker-data:
     #                 type: anitya
     #                 project-id: 88835
