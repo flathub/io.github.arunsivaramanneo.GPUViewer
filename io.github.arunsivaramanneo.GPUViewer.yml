@@ -1,7 +1,7 @@
 id: io.github.arunsivaramanneo.GPUViewer
 runtime: org.gnome.Platform
 sdk: org.gnome.Sdk
-runtime-version: '50'
+runtime-version: '51'
 finish-args:
   - --device=dri
   - --share=ipc
@@ -23,8 +23,8 @@ modules:
       - install -Dm644 ../io.github.arunsivaramanneo.GPUViewer.metainfo.xml /app/share/metainfo/io.github.arunsivaramanneo.GPUViewer.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v4.04/GPU-Viewer-4.04.tar.gz
-        sha256: 5b104d6d50a23e0936ed7a53b1d1a46004fa0711a413b36f632746a8dffe1771
+        url: https://github.com/arunsivaramanneo/GPU-Viewer/archive/v4.05/GPU-Viewer-4.05.tar.gz
+        sha256: 2f1ac71d6eefafa029927dc335ddb297afb445f7f8419ce8eceeae19c79a274e
         x-checker-data:
           is-main-source: true
           type: json
@@ -106,8 +106,8 @@ modules:
           - install -Dm755 -t /app/bin/ clinfo
         sources:
           - type: archive
-            url: https://github.com/Oblomov/clinfo/archive/3.0.25.02.14/clinfo-3.0.25.02.14.tar.gz
-            sha256: 48b77dc33315e6f760791a2984f98ea4bff28504ff37d460d8291585f49fcd3a
+            url: https://github.com/Oblomov/clinfo/archive/3.1.26.09.26/clinfo-3.1.26.09.26.tar.gz
+            sha256: e944132329c6613b686ba0fcd373b15ebb553c367a01a734af8519ddb095c01f
             x-checker-data:
               type: anitya
               project-id: 10503
@@ -120,8 +120,8 @@ modules:
               - -DCMAKE_INSTALL_DATADIR=/app/lib
             sources:
               - type: archive
-                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2025.07.22/OpenCL-Headers-v2025.07.22.tar.gz
-                sha256: 98f0a3ea26b4aec051e533cb1750db2998ab8e82eda97269ed6efe66ec94a240
+                url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v2026.05.29/OpenCL-Headers-v2026.05.29.tar.gz
+                sha256: d9e6c48357de5002da11ce45de600e0c3ffe6ab4f628a3b9fe2b38603161658a
                 x-checker-data:
                   type: anitya
                   project-id: 223257
