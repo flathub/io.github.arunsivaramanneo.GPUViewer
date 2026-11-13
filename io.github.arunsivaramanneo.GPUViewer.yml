@@ -5,7 +5,8 @@ runtime-version: '51'
 finish-args:
   - --device=dri
   - --share=ipc
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
 command: gpu-viewer
 cleanup:
   - /include
@@ -51,31 +52,12 @@ modules:
 #             stable-only: true
 #             url-template: https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz
         modules:
-          - name: volk
+          - name: vulkan-headers
             buildsystem: cmake-ninja
-            config-opts:
-              - -DVOLK_INSTALL=ON
             sources:
               - type: archive
-                url: https://github.com/zeux/volk/archive/vulkan-sdk-1.4.350.0.tar.gz
-                sha256: a04f26f76e9a4f9acf936bd2c159f5c4c8348f8ebaf118ff72ba6a9637ad3e80
-#               x-checker-data:
-#                 type: anitya
-#                 project-id: 88835
-#                 stable-only: true
-    #                 url-template: https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz    
-            modules:
-              - name: vulkan-headers
-                buildsystem: cmake-ninja
-                sources:
-                  - type: archive
-                    url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.368/Vulkan-Headers-v1.4.368.tar.gz
-                    sha256: 5c5c6f64fcce28a24cc934143a048707af036a858e4ed11d7f71fe016006ecda
-    #               x-checker-data:
-    #                 type: anitya
-    #                 project-id: 88835
-    #                 stable-only: true
-    #                 url-template: https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz
+                url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.368/Vulkan-Headers-v1.4.368.tar.gz
+                sha256: 5c5c6f64fcce28a24cc934143a048707af036a858e4ed11d7f71fe016006ecda
 
       - name: mesa-demos
         buildsystem: meson
